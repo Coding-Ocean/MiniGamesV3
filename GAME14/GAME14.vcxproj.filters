@@ -5,8 +5,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GAME14.cpp" />
+    <ClCompile Include="CONTAINER.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME14.h" />
+    <ClInclude Include="CONTAINER.h" />
   </ItemGroup>
 </Project>

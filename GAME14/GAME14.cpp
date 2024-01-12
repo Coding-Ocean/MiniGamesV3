@@ -1,5 +1,6 @@
 #include "../../libOne/inc/libOne.h"
 #include "../MAIN/MAIN.h"
+#include"CONTAINER.h"
 #include "GAME14.h"
 namespace GAME14
 {
@@ -10,11 +11,12 @@ namespace GAME14
 
 		//初期値設定はInit()関数などを作ってそこで行ったほうが良い。
 		//シンプルなゲームなら次のように、ここで行ってもよい。
-		Px = width / 2;
-		Py = height / 2;
-		Radius = 200;
-
+		
 		return 0;
+	}
+
+	void GAME::init()
+	{
 	}
 
 	void GAME::destroy()
@@ -32,7 +34,6 @@ namespace GAME14
 		strokeWeight(50);
 		stroke(0);
 		fill(255, 0, 0);
-		circle(Px, Py, Radius * 2);
 		//テキスト情報
 		fill(0);
 		textSize(100);
@@ -43,5 +44,11 @@ namespace GAME14
 			main()->backToMenu();
 		}
 	}
+void GAME::player(){}
+void GAME::building(){}
+void GAME::title(){}
+void GAME::stage(){}
+void GAME::game_crear(){}
+void GAME::game_over(){}
 
 }
