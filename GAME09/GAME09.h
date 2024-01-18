@@ -5,13 +5,28 @@ namespace GAME09
     class GAME :
         public GAME_BASE
     {
+    //ƒRƒ“ƒeƒi
+    private:
+        class CONTAINER* Container;
     public:
-        GAME(class MAIN* main) :GAME_BASE(main) {};
+        class CONTAINER* container() {
+            return Container;
+        }
+    public:
+        enum SCENE_ID {
+            TITLE_ID,
+            SELECT_ID,
+            NUM_SCENES
+        };
+    private:
+        class SCENE* Scenes[NUM_SCENES];
+        SCENE_ID CurSceneId;
+    public:
+        GAME(class MAIN* main) : GAME_BASE(main) {};
         ~GAME() {};
         int create();
         void proc();
         void destroy();
-    private:
-        float Px = 0, Py = 0, Radius = 0;
+        void changeScene(SCENE_ID sceneId);
     };
 }

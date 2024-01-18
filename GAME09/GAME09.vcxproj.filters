@@ -5,8 +5,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GAME09.cpp" />
+    <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="SCENE.cpp" />
+    <ClCompile Include="TITLE.cpp" />
+    <ClCompile Include="CONTAINER.cpp" />
+    <ClCompile Include="SELECT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
+    <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="SCENE.h" />
+    <ClInclude Include="TITLE.h" />
+    <ClInclude Include="CONTAINER.h" />
+    <ClInclude Include="SELECT.h" />
   </ItemGroup>
 </Project>
