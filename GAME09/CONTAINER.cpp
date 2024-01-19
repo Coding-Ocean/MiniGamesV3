@@ -19,8 +19,9 @@ namespace GAME09
 
 		Data.select.col = 3;
 		Data.select.row = 2;
-		Data.select.imgSize = VECTOR2(560, 420);
-		Data.select.imgOfst = VECTOR2(40,60);
+		Data.select.imgSize = VECTOR2(400, 300);
+		Data.select.imgOfst = VECTOR2(80, 50);
+		Data.select.selectOfst = VECTOR2(120,160);//560,460
 
 		Data.fade.alpha = 0;
 		Data.fade.color = COLOR(0,0,0);

@@ -15,5 +15,6 @@ namespace GAME09
         virtual void update();
         virtual void draw();
         virtual void nextScene();
+        virtual const char* gameName();//ゲームシーン用
     };
 }

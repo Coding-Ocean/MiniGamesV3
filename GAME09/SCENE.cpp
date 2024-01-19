@@ -29,4 +29,7 @@ namespace GAME09
 	void SCENE::nextScene() {
 
 	}
+	const char* SCENE::gameName() {
+		return "???";
+	}
 }

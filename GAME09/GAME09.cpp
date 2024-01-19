@@ -22,6 +22,7 @@ namespace GAME09
 
 		//create
 		Scenes[TITLE_ID]->create();
+		Scenes[SELECT_ID]->create();
 		Fade->create();
 
 		//init
@@ -32,6 +33,7 @@ namespace GAME09
 
 	void GAME::destroy()
 	{
+		delete Fade;
 		for (int i = 0; i < NUM_SCENES; i++) {
 			delete Scenes[i];
 		}
