@@ -4,6 +4,8 @@
 #include "CONTAINER.h"
 #include "TITLE.h"
 #include "SELECT.h"
+#include "FADE.h"
+
 namespace GAME09
 {
 
@@ -13,12 +15,14 @@ namespace GAME09
 		Container = new CONTAINER;
 		Scenes[TITLE_ID] = new TITLE(this);
 		Scenes[SELECT_ID] = new SELECT(this);
+		Fade = new FADE(this);
 
 		//load
 		Container->load();
 
 		//create
 		Scenes[TITLE_ID]->create();
+		Fade->create();
 
 		//init
 		CurSceneId = TITLE_ID;
@@ -37,6 +41,7 @@ namespace GAME09
 	void GAME::proc()
 	{
 		Scenes[CurSceneId]->proc();
+		Fade->proc();
 
 		//ƒƒjƒ…[‚É–ß‚é------------------------------------------
 		if (isTrigger(KEY_ENTER)) {
@@ -46,5 +51,7 @@ namespace GAME09
 
 	void GAME::changeScene(SCENE_ID sceneId) {
 		CurSceneId = sceneId;
+		Scenes[CurSceneId]->init();
+		Fade->inStart();
 	}
 }

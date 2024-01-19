@@ -17,6 +17,13 @@ namespace GAME09
 		strcpy_s(Data.title.titleStr, "レトロゲームコレクション");
 		strcpy_s(Data.title.startStr, "click to start");
 
-		Data.select.a = 1;
+		Data.select.col = 3;
+		Data.select.row = 2;
+		Data.select.imgSize = VECTOR2(560, 420);
+		Data.select.imgOfst = VECTOR2(40,60);
+
+		Data.fade.alpha = 0;
+		Data.fade.color = COLOR(0,0,0);
+		Data.fade.speed = 700;
 	}
 }

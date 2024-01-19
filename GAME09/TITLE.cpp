@@ -42,6 +42,9 @@ namespace GAME09
 	}
 	void TITLE::nextScene() {
 		if (isTrigger(MOUSE_LBUTTON)) {
+			game()->fade()->outStart();
+		}
+		if (game()->fade()->outEndFlag()) {
 			game()->changeScene(GAME::SELECT_ID);
 		}
 	}

@@ -20,6 +20,7 @@ namespace GAME09
         };
     private:
         class SCENE* Scenes[NUM_SCENES];
+        class FADE* Fade;
         SCENE_ID CurSceneId;
     public:
         GAME(class MAIN* main) : GAME_BASE(main) {};
@@ -28,5 +29,6 @@ namespace GAME09
         void proc();
         void destroy();
         void changeScene(SCENE_ID sceneId);
+        class FADE* fade() { return Fade; }
     };
 }

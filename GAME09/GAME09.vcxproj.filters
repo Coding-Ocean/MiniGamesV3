@@ -10,6 +10,7 @@
     <ClCompile Include="TITLE.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="SELECT.cpp" />
+    <ClCompile Include="FADE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -18,5 +19,6 @@
     <ClInclude Include="TITLE.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="SELECT.h" />
+    <ClInclude Include="FADE.h" />
   </ItemGroup>
 </Project>

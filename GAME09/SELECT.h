@@ -10,7 +10,10 @@ namespace GAME09
     {
     public:
         struct DATA {
-            int a;
+            int col;
+            int row;
+            VECTOR2 imgSize;
+            VECTOR2 imgOfst;
         };
     private:
         DATA Select;

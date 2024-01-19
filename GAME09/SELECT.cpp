@@ -19,6 +19,7 @@ namespace GAME09
 	}
 	void SELECT::draw() {
 		clear(128);
+		fill(255);
 		print("select");
 	}
 	void SELECT::nextScene() {

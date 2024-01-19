@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CONTAINER.cpp" />
+    <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME09.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
     <ClCompile Include="SCENE.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CONTAINER.h" />
+    <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME09.h" />
     <ClInclude Include="GAME_OBJECT.h" />
     <ClInclude Include="SCENE.h" />
