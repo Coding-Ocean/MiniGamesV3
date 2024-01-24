@@ -12,20 +12,13 @@ namespace GAME09
 
 	}
 	SELECT::~SELECT() {
-		for (int i = 0; i < NUM_GAMES; i++) {
-			if (Games[i] != nullptr) {
-				delete Games[i];
-			}
-		}
+		
 	}
 	void SELECT::create() {
 		Select = game()->container()->data().select;
-		Games[AroundJapan] = nullptr;
-		Games[Bingo] = nullptr;
-		Games[Enpty1] = nullptr;
-		Games[Enpty2] = nullptr;
-		Games[Enpty3] = nullptr;
-		Games[Enpty4] = nullptr;
+	}
+	void SELECT::update() {
+
 	}
 	void SELECT::draw() {
 		clear(128);

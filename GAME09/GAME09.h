@@ -18,8 +18,17 @@ namespace GAME09
             SELECT_ID,
             NUM_SCENES
         };
+        enum GAME_ID {
+            AroundJapan,
+            Bingo,
+            Enpty1,
+            Enpty2,
+            Enpty3,
+            Enpty4,
+            NUM_GAMES
+        };
     private:
-        class SCENE* Scenes[NUM_SCENES];
+        class SCENE* Scenes[NUM_SCENES + NUM_GAMES];
         class FADE* Fade;
         SCENE_ID CurSceneId;
     public:
@@ -29,6 +38,7 @@ namespace GAME09
         void proc();
         void destroy();
         void changeScene(SCENE_ID sceneId);
+        void launchGame(GAME_ID gameId);
         class FADE* fade() { return Fade; }
     };
 }

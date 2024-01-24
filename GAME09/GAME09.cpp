@@ -15,6 +15,12 @@ namespace GAME09
 		Container = new CONTAINER;
 		Scenes[TITLE_ID] = new TITLE(this);
 		Scenes[SELECT_ID] = new SELECT(this);
+		Scenes[NUM_SCENES + AroundJapan] = nullptr;
+		Scenes[NUM_SCENES + Bingo] = nullptr;
+		Scenes[NUM_SCENES + Enpty1] = nullptr;
+		Scenes[NUM_SCENES + Enpty2] = nullptr;
+		Scenes[NUM_SCENES + Enpty3] = nullptr;
+		Scenes[NUM_SCENES + Enpty4] = nullptr;
 		Fade = new FADE(this);
 
 		//load
@@ -34,8 +40,10 @@ namespace GAME09
 	void GAME::destroy()
 	{
 		delete Fade;
-		for (int i = 0; i < NUM_SCENES; i++) {
-			delete Scenes[i];
+		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
+			if (Scenes[i] != nullptr) {
+				delete Scenes[i];
+			}
 		}
 		delete Container;
 	}
@@ -55,5 +63,9 @@ namespace GAME09
 		CurSceneId = sceneId;
 		Scenes[CurSceneId]->init();
 		Fade->inStart();
+	}
+
+	void GAME::launchGame(GAME_ID gameId) {
+
 	}
 }
