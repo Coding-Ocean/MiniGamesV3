@@ -5,6 +5,7 @@
 #include "TITLE.h"
 #include "SELECT.h"
 #include "FADE.h"
+#include "MESSAGE.h"
 
 namespace GAME09
 {
@@ -22,6 +23,7 @@ namespace GAME09
 		Scenes[NUM_SCENES + Enpty3] = nullptr;
 		Scenes[NUM_SCENES + Enpty4] = nullptr;
 		Fade = new FADE(this);
+		Message = new MESSAGE(this);
 
 		//load
 		Container->load();
@@ -30,6 +32,7 @@ namespace GAME09
 		Scenes[TITLE_ID]->create();
 		Scenes[SELECT_ID]->create();
 		Fade->create();
+		Message->create();
 
 		//init
 		CurSceneId = TITLE_ID;
@@ -39,6 +42,7 @@ namespace GAME09
 
 	void GAME::destroy()
 	{
+		delete Message;
 		delete Fade;
 		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
 			if (Scenes[i] != nullptr) {
@@ -51,6 +55,7 @@ namespace GAME09
 	void GAME::proc()
 	{
 		Scenes[CurSceneId]->proc();
+		Message->proc();
 		Fade->proc();
 
 		//ƒƒjƒ…[‚É–ß‚é------------------------------------------

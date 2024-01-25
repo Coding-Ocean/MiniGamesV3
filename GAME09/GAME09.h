@@ -1,5 +1,6 @@
 #pragma once
 #include "../MAIN/GAME_BASE.h"
+
 namespace GAME09
 {
     class GAME :
@@ -30,6 +31,7 @@ namespace GAME09
     private:
         class SCENE* Scenes[NUM_SCENES + NUM_GAMES];
         class FADE* Fade;
+        class MESSAGE* Message;
         SCENE_ID CurSceneId;
     public:
         GAME(class MAIN* main) : GAME_BASE(main) {};
@@ -40,5 +42,6 @@ namespace GAME09
         void changeScene(SCENE_ID sceneId);
         void launchGame(GAME_ID gameId);
         class FADE* fade() { return Fade; }
+        class MESSAGE* message() { return Message; }
     };
 }

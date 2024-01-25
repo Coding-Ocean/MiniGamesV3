@@ -4,6 +4,7 @@
 #include "CONTAINER.h"
 #include "GAME09.h"
 #include "SELECT.h"
+#include "MESSAGE.h"
 
 namespace GAME09
 {
@@ -18,10 +19,15 @@ namespace GAME09
 		Select = game()->container()->data().select;
 	}
 	void SELECT::update() {
-
+		if (isTrigger(MOUSE_LBUTTON)) {
+			game()->message()->upperMessage("テスト用ですわ～");
+			//game()->message()->upperMessage("テテテテテテテテ");
+			//game()->message()->upperMessage("テストテストテストテストテストテスト");
+		}
 	}
 	void SELECT::draw() {
 		clear(128);
+		rectMode(CORNER);
 		fill(255);
 		textSize(100);
 		text("ゲーム選択", 10, 110);

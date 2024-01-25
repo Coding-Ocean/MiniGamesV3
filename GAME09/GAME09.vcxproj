@@ -140,6 +140,7 @@
     <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME09.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="MESSAGE.cpp" />
     <ClCompile Include="SCENE.cpp" />
     <ClCompile Include="SELECT.cpp" />
     <ClCompile Include="TITLE.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME09.h" />
     <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="MESSAGE.h" />
     <ClInclude Include="SCENE.h" />
     <ClInclude Include="SELECT.h" />
     <ClInclude Include="TITLE.h" />

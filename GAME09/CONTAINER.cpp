@@ -26,5 +26,12 @@ namespace GAME09
 		Data.fade.alpha = 0;
 		Data.fade.color = COLOR(0,0,0);
 		Data.fade.speed = 700;
+
+		Data.message.showTime = 0.7f;
+		Data.message.fadeTime = 0.3f;
+		Data.message.strSize = 90;
+		Data.message.strColor = COLOR(255, 255, 255);
+		Data.message.rectSize = VECTOR2(1980, 200);
+		Data.message.rectColor = COLOR(255, 0, 0, 128);
 	}
 }

@@ -11,6 +11,7 @@
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="SELECT.cpp" />
     <ClCompile Include="FADE.cpp" />
+    <ClCompile Include="MESSAGE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -20,5 +21,6 @@
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="SELECT.h" />
     <ClInclude Include="FADE.h" />
+    <ClInclude Include="MESSAGE.h" />
   </ItemGroup>
 </Project>

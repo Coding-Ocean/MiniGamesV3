@@ -2,6 +2,7 @@
 #include "TITLE.h"
 #include "SELECT.h"
 #include "FADE.h"
+#include "MESSAGE.h"
 
 namespace GAME09
 {
@@ -11,6 +12,7 @@ namespace GAME09
 			TITLE::DATA title;
 			SELECT::DATA select;
 			FADE::DATA fade;
+			MESSAGE::DATA message;
 		};
 		DATA Data;
 	public:
