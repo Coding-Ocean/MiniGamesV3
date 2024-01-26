@@ -136,12 +136,28 @@
     <Text Include="..\MAIN\assets\game14\title.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BUILDING.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="GAME14.cpp" />
+    <ClCompile Include="GAME_CLEAR.cpp" />
+    <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="GAME_OVER.cpp" />
+    <ClCompile Include="PLAYER.cpp" />
+    <ClCompile Include="SCENE.cpp" />
+    <ClCompile Include="STAGE.cpp" />
+    <ClCompile Include="TITLE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BUILDING.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="GAME14.h" />
+    <ClInclude Include="GAME_CLEAR.h" />
+    <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="GAME_OVER.h" />
+    <ClInclude Include="PLAYER.h" />
+    <ClInclude Include="SCENE.h" />
+    <ClInclude Include="STAGE.h" />
+    <ClInclude Include="TITLE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
