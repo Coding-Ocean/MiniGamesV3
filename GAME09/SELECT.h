@@ -18,9 +18,11 @@ namespace GAME09
         };
     private:
         DATA Select;
+        int Mouseover; //マウスオーバーされてるゲーム番号(なければ-1)
     public:
         SELECT(class GAME* game);
         ~SELECT();
+        void init();
         void create();
         void update();
         void draw();

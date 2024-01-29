@@ -15,26 +15,47 @@ namespace GAME09
 	SELECT::~SELECT() {
 		
 	}
+	void SELECT::init() {
+		Mouseover = -1;
+	}
 	void SELECT::create() {
 		Select = game()->container()->data().select;
 	}
 	void SELECT::update() {
+		Mouseover = -1;
+		for (int y = 0; y < Select.row; y++) {
+			for (int x = 0; x < Select.col; x++) {
+				float selectPosX = (width - Select.selectOfst.x * 2) / Select.col * x;
+				float imgPosX = selectPosX + Select.selectOfst.x + Select.imgOfst.x;
+				float selectPosY = (height - Select.selectOfst.y) / Select.row * y;
+				float imgPosY = selectPosY + Select.selectOfst.y + Select.imgOfst.y;
+				if (imgPosX < mouseX && mouseX < imgPosX + Select.imgSize.x &&
+					imgPosY < mouseY && mouseY < imgPosY + Select.imgSize.y) {
+					Mouseover = Select.col * y + x;
+				}
+			}
+		}
 		if (isTrigger(MOUSE_LBUTTON)) {
-			game()->message()->upperMessage("テスト用ですわ～");
-			//game()->message()->upperMessage("テテテテテテテテ");
-			//game()->message()->upperMessage("テストテストテストテストテストテスト");
+			if (Mouseover != -1) {
+				game()->message()->upperMessage("ゲームがありません");
+			}
 		}
 	}
 	void SELECT::draw() {
 		clear(128);
 		rectMode(CORNER);
-		fill(255);
 		textSize(100);
 		text("ゲーム選択", 10, 110);
 		stroke(0);
 		strokeWeight(2);
 		for (int y = 0; y < Select.row; y++) {
 			for (int x = 0; x < Select.col; x++) {
+				if (Mouseover == Select.col * y + x) {
+					fill(180);
+				}
+				else {
+					fill(255);
+				}
 				rect((width - Select.selectOfst.x * 2) / Select.col * x + Select.selectOfst.x + Select.imgOfst.x,
 					(height - Select.selectOfst.y) / Select.row * y + Select.selectOfst.y + Select.imgOfst.y,
 					Select.imgSize.x, Select.imgSize.y);
