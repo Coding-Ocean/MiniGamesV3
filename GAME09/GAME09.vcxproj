@@ -136,6 +136,7 @@
     <Text Include="..\MAIN\assets\game09\title.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AROUNDJAPAN.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME09.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="TITLE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AROUNDJAPAN.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME09.h" />

@@ -6,6 +6,7 @@
 #include "SELECT.h"
 #include "FADE.h"
 #include "MESSAGE.h"
+#include "AROUNDJAPAN.h"
 
 namespace GAME09
 {
@@ -16,7 +17,7 @@ namespace GAME09
 		Container = new CONTAINER;
 		Scenes[TITLE_ID] = new TITLE(this);
 		Scenes[SELECT_ID] = new SELECT(this);
-		Scenes[NUM_SCENES + AroundJapan] = nullptr;
+		Scenes[NUM_SCENES + AroundJapan] = new AROUNDJAPAN(this);
 		Scenes[NUM_SCENES + Bingo] = nullptr;
 		Scenes[NUM_SCENES + Enpty1] = nullptr;
 		Scenes[NUM_SCENES + Enpty2] = nullptr;
@@ -29,8 +30,11 @@ namespace GAME09
 		Container->load();
 
 		//create
-		Scenes[TITLE_ID]->create();
-		Scenes[SELECT_ID]->create();
+		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
+			if (Scenes[i] != nullptr) {
+				Scenes[i]->create();
+			}
+		}
 		Fade->create();
 		Message->create();
 
@@ -64,13 +68,19 @@ namespace GAME09
 		}
 	}
 
-	void GAME::changeScene(SCENE_ID sceneId) {
+	void GAME::changeScene(int sceneId) {
 		CurSceneId = sceneId;
 		Scenes[CurSceneId]->init();
 		Fade->inStart();
 	}
 
 	void GAME::launchGame(GAME_ID gameId) {
-
+		int sceneId = NUM_SCENES + gameId;
+		if (Scenes[sceneId] == nullptr) {
+			Message->upperMessage("ƒQ[ƒ€‚ª‚ ‚è‚Ü‚¹‚ñ");
+		}
+		else {
+			Fade->outStart();
+		}
 	}
 }

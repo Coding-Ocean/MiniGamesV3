@@ -12,6 +12,7 @@
     <ClCompile Include="SELECT.cpp" />
     <ClCompile Include="FADE.cpp" />
     <ClCompile Include="MESSAGE.cpp" />
+    <ClCompile Include="AROUNDJAPAN.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -22,5 +23,6 @@
     <ClInclude Include="SELECT.h" />
     <ClInclude Include="FADE.h" />
     <ClInclude Include="MESSAGE.h" />
+    <ClInclude Include="AROUNDJAPAN.h" />
   </ItemGroup>
 </Project>

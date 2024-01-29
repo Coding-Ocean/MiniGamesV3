@@ -5,24 +5,18 @@
 
 namespace GAME09
 {
-    class SELECT :
+    class AROUNDJAPAN :
         public SCENE
     {
     public:
         struct DATA {
-            int col;
-            int row;
-            VECTOR2 imgSize;
-            VECTOR2 imgOfst;
-            VECTOR2 selectOfst;
+            int img;
         };
     private:
-        DATA Select;
-        int Mouseover; //マウスオーバーされてるゲーム番号(なければ-1)
-        int GameId;
+        DATA AroundJapan;
     public:
-        SELECT(class GAME* game);
-        ~SELECT();
+        AROUNDJAPAN(class GAME* game);
+        ~AROUNDJAPAN();
         void init();
         void create();
         void update();

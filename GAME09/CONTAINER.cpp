@@ -33,5 +33,7 @@ namespace GAME09
 		Data.message.strColor = COLOR(255, 255, 255);
 		Data.message.rectSize = VECTOR2(1980, 200);
 		Data.message.rectColor = COLOR(255, 0, 0, 128);
+
+		Data.aroundJapan.img = 0;
 	}
 }

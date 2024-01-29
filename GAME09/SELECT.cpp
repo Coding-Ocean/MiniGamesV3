@@ -35,11 +35,6 @@ namespace GAME09
 				}
 			}
 		}
-		if (isTrigger(MOUSE_LBUTTON)) {
-			if (Mouseover != -1) {
-				game()->message()->upperMessage("ƒQ[ƒ€‚ª‚ ‚è‚Ü‚¹‚ñ");
-			}
-		}
 	}
 	void SELECT::draw() {
 		clear(128);
@@ -63,8 +58,16 @@ namespace GAME09
 		}
 	}
 	void SELECT::nextScene() {
-		//if (isTrigger(KEY_Z)) {
-		//	game()->changeScene(GAME::STAGE_ID);
-		//}
+		if (game()->fade()->inEndFlag()) {
+			if (isTrigger(MOUSE_LBUTTON)) {
+				if (Mouseover != -1) {
+					game()->launchGame((GAME::GAME_ID)Mouseover);
+					GameId = Mouseover;
+				}
+			}
+		}
+		if(game()->fade()->outEndFlag()){
+			game()->changeScene(GAME::NUM_SCENES + GameId);
+		}
 	}
 }

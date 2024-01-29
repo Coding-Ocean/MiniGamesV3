@@ -3,6 +3,7 @@
 #include "SELECT.h"
 #include "FADE.h"
 #include "MESSAGE.h"
+#include "AROUNDJAPAN.h"
 
 namespace GAME09
 {
@@ -13,6 +14,7 @@ namespace GAME09
 			SELECT::DATA select;
 			FADE::DATA fade;
 			MESSAGE::DATA message;
+			AROUNDJAPAN::DATA aroundJapan;
 		};
 		DATA Data;
 	public:

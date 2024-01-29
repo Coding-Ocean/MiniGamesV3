@@ -32,14 +32,14 @@ namespace GAME09
         class SCENE* Scenes[NUM_SCENES + NUM_GAMES];
         class FADE* Fade;
         class MESSAGE* Message;
-        SCENE_ID CurSceneId;
+        int CurSceneId;
     public:
         GAME(class MAIN* main) : GAME_BASE(main) {};
         ~GAME() {};
         int create();
         void proc();
         void destroy();
-        void changeScene(SCENE_ID sceneId);
+        void changeScene(int sceneId);
         void launchGame(GAME_ID gameId);
         class FADE* fade() { return Fade; }
         class MESSAGE* message() { return Message; }
