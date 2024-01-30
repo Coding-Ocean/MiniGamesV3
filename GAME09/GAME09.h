@@ -32,6 +32,7 @@ namespace GAME09
         class SCENE* Scenes[NUM_SCENES + NUM_GAMES];
         class FADE* Fade;
         class MESSAGE* Message;
+        class BACKBUTTON* Back;
         int CurSceneId;
     public:
         GAME(class MAIN* main) : GAME_BASE(main) {};

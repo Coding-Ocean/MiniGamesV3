@@ -14,6 +14,7 @@
     <ClCompile Include="MESSAGE.cpp" />
     <ClCompile Include="AROUNDJAPAN.cpp" />
     <ClCompile Include="BINGO.cpp" />
+    <ClCompile Include="BACKBUTTON.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -26,5 +27,6 @@
     <ClInclude Include="MESSAGE.h" />
     <ClInclude Include="AROUNDJAPAN.h" />
     <ClInclude Include="BINGO.h" />
+    <ClInclude Include="BACKBUTTON.h" />
   </ItemGroup>
 </Project>

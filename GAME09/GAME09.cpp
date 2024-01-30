@@ -8,6 +8,7 @@
 #include "MESSAGE.h"
 #include "AROUNDJAPAN.h"
 #include "BINGO.h"
+#include "BACKBUTTON.h"
 
 namespace GAME09
 {
@@ -26,6 +27,7 @@ namespace GAME09
 		Scenes[NUM_SCENES + Enpty4] = nullptr;
 		Fade = new FADE(this);
 		Message = new MESSAGE(this);
+		Back = new BACKBUTTON(this);
 
 		//load
 		Container->load();
@@ -38,6 +40,7 @@ namespace GAME09
 		}
 		Fade->create();
 		Message->create();
+		Back->create();
 
 		//init
 		CurSceneId = TITLE_ID;
@@ -47,6 +50,7 @@ namespace GAME09
 
 	void GAME::destroy()
 	{
+		delete Back;
 		delete Message;
 		delete Fade;
 		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
@@ -61,6 +65,7 @@ namespace GAME09
 	{
 		Scenes[CurSceneId]->proc();
 		Message->proc();
+		Back->proc();
 		Fade->proc();
 
 		//ƒƒjƒ…[‚É–ß‚é------------------------------------------

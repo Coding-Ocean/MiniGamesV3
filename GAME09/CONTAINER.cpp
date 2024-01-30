@@ -1,10 +1,12 @@
 #include "CONTAINER.h"
 #include <string.h>
+#include "../../libOne/inc/graphic.h"
 
 namespace GAME09
 {
 	void CONTAINER::load() {
 		setData();
+		loadGraphic();
 	}
 	void CONTAINER::setData() {
 		Data.title.textColor = COLOR(255, 255, 255);
@@ -37,5 +39,10 @@ namespace GAME09
 		Data.aroundJapan.img = 0;
 
 		Data.bingo.img = 0;
+
+		Data.back.pos = VECTOR2(300, 300);
+	}
+	void CONTAINER::loadGraphic() {
+		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");
 	}
 }

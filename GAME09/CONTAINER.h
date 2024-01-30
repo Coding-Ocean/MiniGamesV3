@@ -5,6 +5,7 @@
 #include "MESSAGE.h"
 #include "AROUNDJAPAN.h"
 #include "BINGO.h"
+#include "BACKBUTTON.h"
 
 namespace GAME09
 {
@@ -17,11 +18,13 @@ namespace GAME09
 			MESSAGE::DATA message;
 			AROUNDJAPAN::DATA aroundJapan;
 			BINGO::DATA bingo;
+			BACKBUTTON::DATA back;
 		};
 		DATA Data;
 	public:
 		void load();
 		void setData();
+		void loadGraphic();
 		const DATA& data() {
 			return Data;
 		}
