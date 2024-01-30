@@ -4,6 +4,7 @@
 #include "FADE.h"
 #include "MESSAGE.h"
 #include "AROUNDJAPAN.h"
+#include "BINGO.h"
 
 namespace GAME09
 {
@@ -15,6 +16,7 @@ namespace GAME09
 			FADE::DATA fade;
 			MESSAGE::DATA message;
 			AROUNDJAPAN::DATA aroundJapan;
+			BINGO::DATA bingo;
 		};
 		DATA Data;
 	public:

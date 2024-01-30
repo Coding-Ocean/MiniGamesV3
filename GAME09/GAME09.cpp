@@ -7,6 +7,7 @@
 #include "FADE.h"
 #include "MESSAGE.h"
 #include "AROUNDJAPAN.h"
+#include "BINGO.h"
 
 namespace GAME09
 {
@@ -18,7 +19,7 @@ namespace GAME09
 		Scenes[TITLE_ID] = new TITLE(this);
 		Scenes[SELECT_ID] = new SELECT(this);
 		Scenes[NUM_SCENES + AroundJapan] = new AROUNDJAPAN(this);
-		Scenes[NUM_SCENES + Bingo] = nullptr;
+		Scenes[NUM_SCENES + Bingo] = new BINGO(this);
 		Scenes[NUM_SCENES + Enpty1] = nullptr;
 		Scenes[NUM_SCENES + Enpty2] = nullptr;
 		Scenes[NUM_SCENES + Enpty3] = nullptr;

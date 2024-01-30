@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AROUNDJAPAN.cpp" />
+    <ClCompile Include="BINGO.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME09.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AROUNDJAPAN.h" />
+    <ClInclude Include="BINGO.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME09.h" />

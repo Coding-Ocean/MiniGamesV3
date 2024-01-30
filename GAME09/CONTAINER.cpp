@@ -35,5 +35,7 @@ namespace GAME09
 		Data.message.rectColor = COLOR(255, 0, 0, 128);
 
 		Data.aroundJapan.img = 0;
+
+		Data.bingo.img = 0;
 	}
 }
