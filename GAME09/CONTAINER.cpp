@@ -40,7 +40,10 @@ namespace GAME09
 
 		Data.bingo.img = 0;
 
-		Data.back.pos = VECTOR2(300, 300);
+		Data.back.imgSize = 0.2f;
+		Data.back.pos = VECTOR2(130, 80);
+		Data.back.colliOfst = VECTOR2(-22, 0);
+		Data.back.colliSize = VECTOR2(76, 56);
 	}
 	void CONTAINER::loadGraphic() {
 		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");

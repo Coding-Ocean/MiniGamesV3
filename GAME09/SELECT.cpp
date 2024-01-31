@@ -60,6 +60,10 @@ namespace GAME09
 	void SELECT::nextScene() {
 		if (game()->fade()->inEndFlag()) {
 			if (isTrigger(MOUSE_LBUTTON)) {
+				if (game()->button()->collisionMouse()) {
+					game()->fade()->outStart();
+					GameId = GAME::TITLE_ID - GAME::NUM_SCENES;
+				}
 				if (Mouseover != -1) {
 					game()->launchGame((GAME::GAME_ID)Mouseover);
 					GameId = Mouseover;

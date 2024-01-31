@@ -41,8 +41,11 @@ namespace GAME09
         void proc();
         void destroy();
         void changeScene(int sceneId);
+        void backToMenu();
         void launchGame(GAME_ID gameId);
         class FADE* fade() { return Fade; }
         class MESSAGE* message() { return Message; }
+        class BACKBUTTON* button() { return Back; }
+        int getCurSceneId() { return CurSceneId; }
     };
 }

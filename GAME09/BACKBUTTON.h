@@ -10,7 +10,10 @@ namespace GAME09
     public:
         struct DATA {
             int img;
+            float imgSize;
             VECTOR2 pos;
+            VECTOR2 colliOfst;
+            VECTOR2 colliSize;
         };
     private:
         DATA Back;
@@ -19,5 +22,6 @@ namespace GAME09
         ~BACKBUTTON();
         void create();
         void proc();
+        bool collisionMouse();
     };
 }

@@ -31,6 +31,13 @@ namespace GAME09
 		text("スマートビンゴ", 10, 110);
 	}
 	void BINGO::nextScene() {
-
+		if (isTrigger(MOUSE_LBUTTON)) {
+			if (game()->button()->collisionMouse()) {
+				game()->fade()->outStart();
+			}
+		}
+		if (game()->fade()->outEndFlag()) {
+			game()->changeScene(GAME::SELECT_ID);
+		}
 	}
 }

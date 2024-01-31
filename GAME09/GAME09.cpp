@@ -67,17 +67,16 @@ namespace GAME09
 		Message->proc();
 		Back->proc();
 		Fade->proc();
-
-		//ƒƒjƒ…[‚É–ß‚é------------------------------------------
-		if (isTrigger(KEY_ENTER)) {
-			main()->backToMenu();
-		}
 	}
 
 	void GAME::changeScene(int sceneId) {
 		CurSceneId = sceneId;
 		Scenes[CurSceneId]->init();
 		Fade->inStart();
+	}
+
+	void GAME::backToMenu() {
+		main()->backToMenu();
 	}
 
 	void GAME::launchGame(GAME_ID gameId) {
