@@ -61,4 +61,7 @@ namespace GAME09
 	void MESSAGE::upperMessage(const char* str) {
 		Messages.emplace_back(Mes{ str,0,SHOW });
 	}
+	void MESSAGE::resetMessage() {
+		Messages.clear();
+	}
 }

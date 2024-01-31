@@ -38,5 +38,6 @@ namespace GAME09
         void create();
         void proc();
         void upperMessage(const char* str);
+        void resetMessage();
     };
 }

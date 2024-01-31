@@ -73,6 +73,7 @@ namespace GAME09
 		CurSceneId = sceneId;
 		Scenes[CurSceneId]->init();
 		Fade->inStart();
+		Message->resetMessage();
 	}
 
 	void GAME::backToMenu() {
