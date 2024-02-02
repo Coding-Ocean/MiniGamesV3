@@ -39,48 +39,73 @@ namespace GAME14 {
         }
     }
     bool BUILDING::collision() {
+        
         VECTOR2 pos = game()->player()->pos();
         VECTOR2 range1 = game()->player()->range1();
         VECTOR2 range2 = game()->player()->range2();
-        int flag = 0;
-
-       /* for (int i = 0; i < game()->building()->maxBuilding(); i++) {
-            if (pos.y >= Buildings[i].pos.y + Buildings[i].scale.y&& pos.x + range.x <= Buildings[i].pos.x)flag = 1;
-            if (pos.x + range.x >= Buildings[i].pos.x&&pos.y <= Buildings[i].pos.y + Buildings[i].scale.y)flag = 2;
-            
-            if (pos.y >= Buildings[i].pos.y + Buildings[i].scale.y && (
-                (pos.x >= Buildings[i].pos.x && pos.x <= Buildings[i].pos.x + Buildings[i].scale.x) ||
-                (pos.x + range.x >= Buildings[i].pos.x && pos.x + range.x <= Buildings[i].pos.x + Buildings[i].scale.x)
-                )) {
-                if (flag == 1) {
-                    game()->player()->setX(Buildings[i].pos.x - range.x);
-                    return false;
-                }
-                else if (flag == 2)game()->player()->setY(Buildings[i].pos.y + Buildings[i].scale.y);
-                return true;
-            }
-        }*/
-        for (int i = 0; i < game()->building()->maxBuilding(); i++) {
+        VECTOR2 scale = game()->player()->scale();
+        bool flag = false;
+        int cnt = 0;
+        for (int i = 0; i < Building.maxBuilding; i++) {
+            VECTOR2 vec1 = { (pos.x + range1.x)-Buildings[i].pos.x  ,
+                              pos.y-(Buildings[i].pos.y+Buildings[i].scale.y)};
+            VECTOR2 vec2 = { (pos.x + scale.x) - Buildings[i].pos.x ,
+                            (pos.y + range1.y) - (Buildings[i].pos.y + Buildings[i].scale.y) };
             if (pos.x >= Buildings[i].pos.x && pos.x <= Buildings[i].pos.x + Buildings[i].scale.x ||
                 pos.x + range1.x >= Buildings[i].pos.x && pos.x + range1.x <= Buildings[i].pos.x + Buildings[i].scale.x) {
                 if (pos.y >= Buildings[i].pos.y + Buildings[i].scale.y) {
-                    game()->player()->setY(Buildings[i].pos.y + Buildings[i].scale.y);
-                    return true;
-                }
-                else if (pos.y < Buildings[i].pos.y + Buildings[i].scale.y) {
-                    return false;
+                    if (vec1.x >=vec1.y) {
+                        game()->player()->setY(Buildings[i].pos.y + Buildings[i].scale.y);
+                        game()->player()->setFJFlag(true);
+                        game()->player()->setDJFlag(true);
+                        flag =  true;
+                        cnt++;
+                    }
+                    else if (vec1.x < vec1.y) {
+                        game()->player()->setX(Buildings[i].pos.x - range1.x);
+                        game()->player()->setFJFlag(true);
+                        game()->player()->setDJFlag(true);
+                        flag  = false;
+                        cnt++;
+                    }
                 }
             }
-        
-        
+            if (pos.x+scale.x >= Buildings[i].pos.x && pos.x+scale.x <= Buildings[i].pos.x + Buildings[i].scale.x ||
+                pos.x + scale.x+range2.x >= Buildings[i].pos.x && pos.x + scale.x+range2.x <= Buildings[i].pos.x + Buildings[i].scale.x) {
+                game()->player()->setVec(vec2);
+                if (pos.y+range1.y >= Buildings[i].pos.y + Buildings[i].scale.y) {
+                    if (vec2.x >= vec2.y) {
+                        game()->player()->setY(Buildings[i].pos.y + Buildings[i].scale.y-range1.y);
+                        game()->player()->setFJFlag(true);
+                        game()->player()->setDJFlag(true);
+                        flag =  true;
+                        cnt++;
+                    }
+                    else if (vec2.x < vec2.y) {
+                        game()->player()->setX(Buildings[i].pos.x - scale.x);
+                        game()->player()->setFJFlag(true);
+                        game()->player()->setDJFlag(true);
+                        flag =  false;
+                        cnt++;
+                    }
+                }
+            }
+            if (cnt)break;
+
         }
-                return false;
+
+
+        //game()->player()->setFJFlag(false);
+        return flag;
     }
 
     void BUILDING::draw(){
-        fill(Building.color);
         for (int i = 0; i < Building.maxBuilding; i++) {
+        fill(Building.color);
+            
             rect(Buildings[i].pos.x, Buildings[i].pos.y, Buildings[i].scale.x, Buildings[i].scale.y);
+            fill(125,0,0,125);
+            circle(Buildings[i].pos.x, Buildings[i].pos.y, 6);
         }
 
         

@@ -10,6 +10,8 @@ namespace GAME14 {
         struct DATA {
             int img = 0;
             COLOR backColor = 0;
+            bool flag = false;
+            float cnt = 0;
         };
     private:
         struct DATA Stage;

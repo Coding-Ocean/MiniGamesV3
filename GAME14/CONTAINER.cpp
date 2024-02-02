@@ -11,7 +11,7 @@ namespace GAME14 {
         //シンプルなゲームなら次のように、ここで行ってもよい。
         Data.player.color = COLOR(0, 255, 0, 125);
         Data.player.scale = VECTOR2(788 * 0.2-6, -788 * 0.2+8);
-        Data.player.range1 = VECTOR2(65, -40);
+        Data.player.range1 = VECTOR2(110, -40);
         Data.player.range2 = VECTOR2(-40, -(788 * 0.2-8));
         Data.player.pos = VECTOR2((width-200)/2, 200);
         Data.player.vec = 0;
@@ -19,8 +19,8 @@ namespace GAME14 {
         Data.player.jumpSpeed = -500;
         Data.player.gravity = 9.8f;
         Data.player.highLimt = 0;
-        Data.player.farstJumpFlag = true;
-        Data.player.doubleJumpFlag = true;
+        Data.player.farstJumpFlag = false;
+        Data.player.doubleJumpFlag = false;
         Data.player.collisionFlag = false;
 
         Data.building.img = 0;
@@ -42,6 +42,8 @@ namespace GAME14 {
 
         Data.stage.img = 0;
         Data.stage.backColor = COLOR(68, 127, 255);
+        Data.stage.flag = false;
+        Data.stage.cnt = 0;
 
         Data.game_clear.img = 0;
         strcpy_s(Data.game_clear.str, "game_crear");
