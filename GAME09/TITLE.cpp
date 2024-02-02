@@ -18,7 +18,6 @@ namespace GAME09
 		Title = game()->container()->data().title;
 	}
 	void TITLE::draw() {
-		clear(128);
 		//ƒ^ƒCƒgƒ‹
 		fill(Title.textStrokeColor);
 		textSize(Title.titleSize);

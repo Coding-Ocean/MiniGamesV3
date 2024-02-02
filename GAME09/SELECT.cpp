@@ -37,7 +37,6 @@ namespace GAME09
 		}
 	}
 	void SELECT::draw() {
-		clear(128);
 		rectMode(CORNER);
 		textSize(100);
 		text("ƒQ[ƒ€‘I‘ğ", 10, 110);

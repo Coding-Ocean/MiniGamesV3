@@ -24,7 +24,6 @@ namespace GAME09
 		
 	}
 	void AROUNDJAPAN::draw() {
-		clear(128);
 		rectMode(CORNER);
 		fill(255);
 		textSize(100);

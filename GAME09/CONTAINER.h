@@ -6,6 +6,7 @@
 #include "AROUNDJAPAN.h"
 #include "BINGO.h"
 #include "BACKBUTTON.h"
+#include "BACKGROUND.h"
 
 namespace GAME09
 {
@@ -19,6 +20,7 @@ namespace GAME09
 			AROUNDJAPAN::DATA aroundJapan;
 			BINGO::DATA bingo;
 			BACKBUTTON::DATA back;
+			BACKGROUND::DATA backG;
 		};
 		DATA Data;
 	public:

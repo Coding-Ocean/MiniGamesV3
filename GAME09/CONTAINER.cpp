@@ -44,8 +44,12 @@ namespace GAME09
 		Data.back.pos = VECTOR2(130, 80);
 		Data.back.colliOfst = VECTOR2(-22, 0);
 		Data.back.colliSize = VECTOR2(76, 56);
+
+		Data.backG.imgSize = 1.0f;
+		Data.backG.pos = VECTOR2(0, 0);
 	}
 	void CONTAINER::loadGraphic() {
 		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");
+		Data.backG.img = loadImage("..\\main\\assets\\game09\\back_ground.png");
 	}
 }

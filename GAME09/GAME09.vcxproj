@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClCompile Include="AROUNDJAPAN.cpp" />
     <ClCompile Include="BACKBUTTON.cpp" />
+    <ClCompile Include="BACKGROUND.cpp" />
     <ClCompile Include="BINGO.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="FADE.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="AROUNDJAPAN.h" />
     <ClInclude Include="BACKBUTTON.h" />
+    <ClInclude Include="BACKGROUND.h" />
     <ClInclude Include="BINGO.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="FADE.h" />
