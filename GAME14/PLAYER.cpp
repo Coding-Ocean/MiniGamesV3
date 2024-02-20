@@ -8,11 +8,13 @@ namespace GAME14 {
     PLAYER::PLAYER(class GAME* game):
         GAME_OBJECT(game){}
     void PLAYER::create(){
-        Player = game()->container()->data().player;
+      //  Player = game()->container()->data().player;
+        init();
     }
     void PLAYER::init(){
         Player = game()->container()->data().player;
         CurImg = Player.img;
+        CurImgSize = Player.imgSize;
         AnimeTime = 0;
     }
     void PLAYER::update(){
@@ -52,12 +54,12 @@ namespace GAME14 {
 
    }
     void PLAYER::draw(){
-        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,1);
+        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,CurImgSize);
         fill(255, 0, 0,125);
        // rect(Player.pos.x, Player.pos.y, Player.scale.x, Player.scale.y);
         fill(Player.color);
-       //rect(Player.pos.x, Player.pos.y, Player.range1.x, Player.range1.y);
-       //rect(Player.pos.x + Player.scale.x, Player.pos.y+Player.range1.y , Player.range2.x, Player.range2.y);
+       rect(Player.pos.x, Player.pos.y, Player.range1.x, Player.range1.y);
+       rect(Player.pos.x + Player.scale.x, Player.pos.y+Player.range1.y , Player.range2.x, Player.range2.y);
         fill(125);
         circle(Player.pos.x, Player.pos.y, 10);
         print(Player.doubleJumpFlag);
@@ -65,6 +67,7 @@ namespace GAME14 {
     void PLAYER::jump() {
         Player.speed = Player.jumpSpeed;
         CurImg = Player.jumpImg;
+        CurImgSize = Player.jumpImgSize;
     }
 
 }

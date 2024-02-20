@@ -9,7 +9,9 @@ namespace GAME14 {
     public:
         struct DATA {
             int img = 0;
+            float imgSize;
             int jumpImg = 0;
+            float jumpImgSize;
             COLOR color = COLOR(0);
             VECTOR2 pos = VECTOR2(0, 0);
             VECTOR2 scale = VECTOR2(0, 0);
@@ -27,6 +29,7 @@ namespace GAME14 {
     private:
         DATA Player;
         int CurImg;
+        float CurImgSize;
         float AnimeTime;
     public:
         PLAYER(class GAME* game);

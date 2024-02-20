@@ -22,6 +22,8 @@ namespace GAME14 {
         Data.player.doubleJumpFlag = false;
         Data.player.collisionFlag = false;
         Data.player.jumpAnimeTime = 0.5f;
+        Data.player.imgSize = 0.2f;
+        Data.player.jumpImgSize = 0.45f;
 
         Data.building.img = 0;
         Data.building.pos = VECTOR2(100, height );
