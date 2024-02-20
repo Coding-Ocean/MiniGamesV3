@@ -52,7 +52,7 @@ namespace GAME14 {
 
    }
     void PLAYER::draw(){
-        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,0.2);
+        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,1);
         fill(255, 0, 0,125);
        // rect(Player.pos.x, Player.pos.y, Player.scale.x, Player.scale.y);
         fill(Player.color);
