@@ -72,7 +72,6 @@ namespace GAME14 {
             }
             if (pos.x+scale.x >= Buildings[i].pos.x && pos.x+scale.x <= Buildings[i].pos.x + Buildings[i].scale.x ||
                 pos.x + scale.x+range2.x >= Buildings[i].pos.x && pos.x + scale.x+range2.x <= Buildings[i].pos.x + Buildings[i].scale.x) {
-                game()->player()->setVec(vec2);
                 if (pos.y+range1.y >= Buildings[i].pos.y + Buildings[i].scale.y) {
                     if (vec2.x >= vec2.y) {
                         game()->player()->setY(Buildings[i].pos.y + Buildings[i].scale.y-range1.y);

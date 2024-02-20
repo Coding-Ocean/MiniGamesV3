@@ -9,10 +9,10 @@ namespace GAME14 {
     public:
         struct DATA {
             int img = 0;
+            int jumpImg = 0;
             COLOR color = COLOR(0);
             VECTOR2 pos = VECTOR2(0, 0);
             VECTOR2 scale = VECTOR2(0, 0);
-            VECTOR2 vec = 0;
             float speed = 0;
             float jumpSpeed = 0;
             float gravity = 0;
@@ -22,9 +22,12 @@ namespace GAME14 {
             VECTOR2 range1 = VECTOR2(0, 0);//‘«Œ³‚Ì“–‚½‚è”»’è
             VECTOR2 range2 = VECTOR2(0, 0);//‘¤–Ê‚Ì“–‚½‚è”»’è
             bool collisionFlag = false;
+            float jumpAnimeTime;
         };
     private:
         DATA Player;
+        int CurImg;
+        float AnimeTime;
     public:
         PLAYER(class GAME* game);
         void create();
@@ -38,7 +41,6 @@ namespace GAME14 {
         VECTOR2 scale() { return Player.scale; }
         void setY(float y) { Player.pos.y = y; }
         void setX(float x) { Player.pos.x = x; }
-        void setVec(VECTOR2 vec) { Player.vec = vec; }
         void setFJFlag(bool flag) { Player.farstJumpFlag = flag; }
         void setDJFlag(bool flag) { Player.doubleJumpFlag = flag; }
     };

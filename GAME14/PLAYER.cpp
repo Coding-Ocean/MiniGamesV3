@@ -12,7 +12,8 @@ namespace GAME14 {
     }
     void PLAYER::init(){
         Player = game()->container()->data().player;
-
+        CurImg = Player.img;
+        AnimeTime = 0;
     }
     void PLAYER::update(){
         if (isPress(KEY_DOWN)) {
@@ -25,33 +26,33 @@ namespace GAME14 {
             Player.pos.x += 200 * delta;
         }
         if (isPress(KEY_LEFT)) {
-            Player.pos.x -= 200 * delta;
+            Player.pos.x -= 400 * delta;
         }
 
-        if (game()->building()->collision()) {
-            if(Player.speed >0)
-            Player.speed = 0;
-        }
-        else {
-            Player.speed += Player.gravity;
-        }
         if (Player.farstJumpFlag) {
             if (isPress(KEY_SPACE)||isTrigger(KEY_SPACE)) {
-                jump();
+            jump();
             }
             Player.farstJumpFlag = false;
         }
         else if (Player.doubleJumpFlag) {
             if (isTrigger(KEY_SPACE)) {
-                jump();
-            }
+            jump();
             Player.doubleJumpFlag = false;
+            }
         }
-         Player.pos.y += Player.speed * delta;
+        if (game()->building()->collision()) {
+            if(Player.speed>0)
+            Player.speed= 0;
+        }
+        else {
+            Player.speed += Player.gravity;
+        }
+        Player.pos.y += Player.speed * delta;
 
    }
     void PLAYER::draw(){
-        image(Player.img, Player.pos.x, Player.pos.y+Player.scale.y,0,0.2);
+        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,0.2);
         fill(255, 0, 0,125);
        // rect(Player.pos.x, Player.pos.y, Player.scale.x, Player.scale.y);
         fill(Player.color);
@@ -59,12 +60,11 @@ namespace GAME14 {
        //rect(Player.pos.x + Player.scale.x, Player.pos.y+Player.range1.y , Player.range2.x, Player.range2.y);
         fill(125);
         circle(Player.pos.x, Player.pos.y, 10);
-        print(Player.vec.x);
-        print(Player.vec.y);
         print(Player.doubleJumpFlag);
     }
     void PLAYER::jump() {
         Player.speed = Player.jumpSpeed;
+        CurImg = Player.jumpImg;
     }
 
 }

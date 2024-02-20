@@ -15,8 +15,10 @@ namespace GAME14 {
         };
     private:
         struct DATA Stage;
+        class TIME* Time;
     public:
         STAGE(class GAME* game);
+        ~STAGE();
         void create();
         void update();
         void draw();

@@ -34,6 +34,7 @@
     <ClCompile Include="CONTAINER.cpp">
       <Filter>container</Filter>
     </ClCompile>
+    <ClCompile Include="TIME.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME14.h">
@@ -66,6 +67,7 @@
     <ClInclude Include="CONTAINER.h">
       <Filter>container</Filter>
     </ClInclude>
+    <ClInclude Include="TIME.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="base">

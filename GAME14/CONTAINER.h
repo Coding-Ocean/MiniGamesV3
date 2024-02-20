@@ -5,6 +5,7 @@
 #include"STAGE.h"
 #include"GAME_CLEAR.h"
 #include"GAME_OVER.h"
+#include"TIME.h"
 #include"GAME14.h"
 namespace GAME14 {
 	class CONTAINER
@@ -16,6 +17,7 @@ namespace GAME14 {
 			GAME14::STAGE::DATA stage;
 			GAME14::GAME_CLEAR::DATA game_clear;
 			GAME14::GAME_OVER::DATA game_over;
+			GAME14::TIME::DATA time;
 		};
 		DATA Data;
 		void setData();
