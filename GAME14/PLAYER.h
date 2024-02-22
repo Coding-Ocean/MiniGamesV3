@@ -7,6 +7,12 @@ namespace GAME14 {
         public GAME_OBJECT
     {
     public:
+        enum STATE {
+            ANIM,
+            FALL,
+            COLLISION,
+            DOUBLEJUMP
+        };
         struct DATA {
             int img = 0;
             float imgSize;
@@ -28,16 +34,18 @@ namespace GAME14 {
         };
     private:
         DATA Player;
+        STATE CurState;
         int CurImg;
         float CurImgSize;
         float AnimeTime;
+        float Angle;
     public:
         PLAYER(class GAME* game);
         void create();
         void init();
         void update();
         void draw();
-        void jump();
+        void jump(bool* flag);
         VECTOR2 pos() { return Player.pos; }
         VECTOR2 range1() { return Player.range1; }
         VECTOR2 range2() { return Player.range2; }

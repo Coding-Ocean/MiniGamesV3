@@ -3,6 +3,7 @@
 #include"../../libOne/inc/graphic.h"
 #include"../../libOne/inc/input.h"
 #include"../../libOne/inc/window.h"
+#include"../../libOne/inc/mathUtil.h"
 #include "PLAYER.h"
 namespace GAME14 {
     PLAYER::PLAYER(class GAME* game):
@@ -15,12 +16,14 @@ namespace GAME14 {
         Player = game()->container()->data().player;
         CurImg = Player.img;
         CurImgSize = Player.imgSize;
+        CurState = FALL;
         AnimeTime = 0;
+        Angle = 0;
     }
-    void PLAYER::update(){
+    void PLAYER::update() {
         if (isPress(KEY_DOWN)) {
             Player.pos.y += 200 * delta;
-        } 
+        }
         if (isPress(KEY_UP)) {
             Player.pos.y -= 200 * delta;
         }
@@ -31,30 +34,68 @@ namespace GAME14 {
             Player.pos.x -= 400 * delta;
         }
 
-        if (Player.farstJumpFlag) {
-            if (isPress(KEY_SPACE)||isTrigger(KEY_SPACE)) {
-            jump();
-            }
-            Player.farstJumpFlag = false;
+        if (CurState == ANIM) {
         }
-        else if (Player.doubleJumpFlag) {
-            if (isTrigger(KEY_SPACE)) {
-            jump();
-            Player.doubleJumpFlag = false;
-            }
-        }
-        if (game()->building()->collision()) {
-            if(Player.speed>0)
-            Player.speed= 0;
-        }
-        else {
+        else if (CurState == FALL) {
             Player.speed += Player.gravity;
+            if (game()->building()->collision()) {
+                if(Player.speed>0)
+                Player.speed = 0;
+                CurState = COLLISION;
+           }
+            if (Player.farstJumpFlag) {
+                if (isPress(KEY_SPACE) || isTrigger(KEY_SPACE)) {
+                    jump(&Player.farstJumpFlag);
+                }
+
+            }
+            else if (Player.doubleJumpFlag) {
+                if (isTrigger(KEY_SPACE)) {
+                    jump(&Player.doubleJumpFlag);
+                    CurImg = Player.jumpImg;
+                    CurImgSize = Player.jumpImgSize;
+                    CurState = DOUBLEJUMP;
+                }
+            }
+            
         }
+        else if (CurState == COLLISION) {
+            if (!game()->building()->collision()) {
+                CurState = FALL;
+            }
+            if (Player.farstJumpFlag) {
+                if (isPress(KEY_SPACE) || isTrigger(KEY_SPACE)) {
+                    jump(&Player.farstJumpFlag);
+                   // CurState = FALL;
+                }
+
+            }
+
+        }
+        else if (CurState == DOUBLEJUMP) {
+            game()->building()->collision();
+            Player.speed += Player.gravity;
+            AnimeTime += delta;
+            if (AnimeTime <= Player.jumpAnimeTime) {
+                angleMode(DEGREES);
+                float addAngle = 360 / Player.jumpAnimeTime;
+                Angle += addAngle * delta;
+            }
+            else {
+                CurImg = Player.img;
+                CurImgSize = Player.imgSize;
+                Angle = 0;
+                AnimeTime = 0;
+                CurState = FALL;
+            }
+
+        }
+
         Player.pos.y += Player.speed * delta;
 
-   }
+    }
     void PLAYER::draw(){
-        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,0,CurImgSize);
+        image(CurImg, Player.pos.x, Player.pos.y+Player.scale.y,Angle,CurImgSize);
         fill(255, 0, 0,125);
        // rect(Player.pos.x, Player.pos.y, Player.scale.x, Player.scale.y);
         fill(Player.color);
@@ -62,12 +103,11 @@ namespace GAME14 {
        rect(Player.pos.x + Player.scale.x, Player.pos.y+Player.range1.y , Player.range2.x, Player.range2.y);
         fill(125);
         circle(Player.pos.x, Player.pos.y, 10);
-        print(Player.doubleJumpFlag);
+        print(CurState);
     }
-    void PLAYER::jump() {
+    void PLAYER::jump(bool* flag) {
         Player.speed = Player.jumpSpeed;
-        CurImg = Player.jumpImg;
-        CurImgSize = Player.jumpImgSize;
+        *flag = false;
     }
 
 }
