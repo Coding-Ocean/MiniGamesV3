@@ -10,10 +10,14 @@ namespace GAME09
     {
     public:
         struct DATA {
-            int img;
+            int fieldImg;
+            int fieldFrameImg;
+            float imgSize;
+            VECTOR2 imgPos;
         };
     private:
         DATA AroundJapan;
+        class PHYSICS_ENGINE_AJ* Physics;
     public:
         AROUNDJAPAN(class GAME* game);
         ~AROUNDJAPAN();

@@ -4,6 +4,7 @@
 #include "CONTAINER.h"
 #include "GAME09.h"
 #include "AROUNDJAPAN.h"
+#include "PHYSICS_ENGINE_AJ.h"
 
 namespace GAME09
 {
@@ -15,19 +16,20 @@ namespace GAME09
 
 	}
 	void AROUNDJAPAN::init() {
-		
+		Physics->init();
 	}
 	void AROUNDJAPAN::create() {
 		AroundJapan = game()->container()->data().aroundJapan;
+		Physics = new PHYSICS_ENGINE_AJ(game());
+		Physics->create();
 	}
 	void AROUNDJAPAN::update() {
-		
+		Physics->update();
 	}
 	void AROUNDJAPAN::draw() {
-		rectMode(CORNER);
-		fill(255);
-		textSize(100);
-		text("“ú–{ˆêŽü", 10, 110);
+		rectMode(CENTER);
+		image(AroundJapan.fieldImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
+		Physics->draw();
 	}
 	void AROUNDJAPAN::nextScene() {
 		if (isTrigger(MOUSE_LBUTTON)) {

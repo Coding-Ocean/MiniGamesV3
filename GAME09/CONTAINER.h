@@ -7,6 +7,7 @@
 #include "BINGO.h"
 #include "BACKBUTTON.h"
 #include "BACKGROUND.h"
+#include "COIN.h"
 
 namespace GAME09
 {
@@ -21,6 +22,7 @@ namespace GAME09
 			BINGO::DATA bingo;
 			BACKBUTTON::DATA back;
 			BACKGROUND::DATA backG;
+			COIN::DATA coin;
 		};
 		DATA Data;
 	public:

@@ -36,7 +36,8 @@ namespace GAME09
 		Data.message.rectSize = VECTOR2(1980, 200);
 		Data.message.rectColor = COLOR(255, 0, 0, 128);
 
-		Data.aroundJapan.img = 0;
+		Data.aroundJapan.imgPos = VECTOR2(width / 2, height / 2);
+		Data.aroundJapan.imgSize = 0.675f;
 
 		Data.bingo.img = 0;
 
@@ -47,8 +48,17 @@ namespace GAME09
 
 		Data.backG.imgSize = 1.0f;
 		Data.backG.pos = VECTOR2(0, 0);
+
+		Data.coin.imgSize = 1;
+		Data.coin.startPos = VECTOR2(1000, 100);
+		Data.coin.radius = 100;
+		Data.coin.friction = 0.5f;
+		Data.coin.limmitV = 100.0f;
+		Data.coin.sw = 2;
 	}
 	void CONTAINER::loadGraphic() {
+		Data.aroundJapan.fieldImg = loadImage("..\\main\\assets\\game09\\travel_field.png");
+		Data.aroundJapan.fieldFrameImg = loadImage("..\\main\\assets\\game09\\travel_field_frame.png");
 		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");
 		Data.backG.img = loadImage("..\\main\\assets\\game09\\back_ground.png");
 	}

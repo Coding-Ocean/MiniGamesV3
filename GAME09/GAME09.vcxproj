@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,11 +140,14 @@
     <ClCompile Include="BACKBUTTON.cpp" />
     <ClCompile Include="BACKGROUND.cpp" />
     <ClCompile Include="BINGO.cpp" />
+    <ClCompile Include="COIN.cpp" />
     <ClCompile Include="CONTAINER.cpp" />
     <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME09.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="LINE.cpp" />
     <ClCompile Include="MESSAGE.cpp" />
+    <ClCompile Include="PHYSICS_ENGINE_AJ.cpp" />
     <ClCompile Include="SCENE.cpp" />
     <ClCompile Include="SELECT.cpp" />
     <ClCompile Include="TITLE.cpp" />
@@ -154,11 +157,14 @@
     <ClInclude Include="BACKBUTTON.h" />
     <ClInclude Include="BACKGROUND.h" />
     <ClInclude Include="BINGO.h" />
+    <ClInclude Include="COIN.h" />
     <ClInclude Include="CONTAINER.h" />
     <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME09.h" />
     <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="LINE.h" />
     <ClInclude Include="MESSAGE.h" />
+    <ClInclude Include="PHYSICS_ENGINE_AJ.h" />
     <ClInclude Include="SCENE.h" />
     <ClInclude Include="SELECT.h" />
     <ClInclude Include="TITLE.h" />
