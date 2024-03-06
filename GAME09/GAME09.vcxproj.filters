@@ -16,6 +16,10 @@
     <ClCompile Include="BINGO.cpp" />
     <ClCompile Include="BACKBUTTON.cpp" />
     <ClCompile Include="BACKGROUND.cpp" />
+    <ClCompile Include="COIN.cpp" />
+    <ClCompile Include="LINE.cpp" />
+    <ClCompile Include="PHYSICS_ENGINE_AJ.cpp" />
+    <ClCompile Include="GAUGE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -30,5 +34,9 @@
     <ClInclude Include="BINGO.h" />
     <ClInclude Include="BACKBUTTON.h" />
     <ClInclude Include="BACKGROUND.h" />
+    <ClInclude Include="COIN.h" />
+    <ClInclude Include="LINE.h" />
+    <ClInclude Include="PHYSICS_ENGINE_AJ.h" />
+    <ClInclude Include="GAUGE.h" />
   </ItemGroup>
 </Project>

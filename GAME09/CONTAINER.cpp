@@ -49,17 +49,40 @@ namespace GAME09
 		Data.backG.imgSize = 1.0f;
 		Data.backG.pos = VECTOR2(0, 0);
 
-		Data.coin.imgSize = 1;
-		Data.coin.startPos = VECTOR2(1000, 100);
-		Data.coin.radius = 100;
+		Data.coin.imgSize = 0.025f;
+		Data.coin.startPos = VECTOR2(1100, 100);
+		Data.coin.startV = VECTOR2(-400, 0);
+		Data.coin.radius = 21;
 		Data.coin.friction = 0.5f;
 		Data.coin.limmitV = 100.0f;
 		Data.coin.sw = 2;
+
+		Data.phisicsAj.gravity = VECTOR2(0, 1000);
+		Data.phisicsAj.wallDataFileName = "..\\main\\assets\\game09\\wall_data.txt";
+		Data.phisicsAj.distanceWall = 315;
+		Data.phisicsAj.coinSize = Data.coin.radius;
+		Data.phisicsAj.tolerance = 3;
+		Data.phisicsAj.powerDiameter = 17.0f;
+
+		Data.gauge.buttonPos = VECTOR2(1400, 1000);
+		Data.gauge.framePos = VECTOR2(1400, 560);
+		Data.gauge.buttonSize = 0.3f;
+		Data.gauge.frameSize = 0.6f;
+		Data.gauge.buttonRadius = 150;
+		Data.gauge.gaugeSize = VECTOR2(75,750);
+		Data.gauge.hueMax = 0;
+		Data.gauge.hueMin = 120;
+		Data.gauge.powerSpeed = 150;
+		Data.gauge.powerMax = 100;
+		Data.gauge.powerMin = 0;
 	}
 	void CONTAINER::loadGraphic() {
 		Data.aroundJapan.fieldImg = loadImage("..\\main\\assets\\game09\\travel_field.png");
 		Data.aroundJapan.fieldFrameImg = loadImage("..\\main\\assets\\game09\\travel_field_frame.png");
 		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");
 		Data.backG.img = loadImage("..\\main\\assets\\game09\\back_ground.png");
+		Data.coin.img = loadImage("..\\main\\assets\\game09\\coin.png");
+		Data.gauge.buttonImg = loadImage("..\\main\\assets\\game09\\gauge_button.png");
+		Data.gauge.frameImg = loadImage("..\\main\\assets\\game09\\gauge_frame.png");
 	}
 }

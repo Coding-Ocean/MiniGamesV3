@@ -12,8 +12,9 @@ namespace GAME09
 	public:
 		struct DATA {
 			int img;
-			int imgSize;
+			float imgSize;
 			VECTOR2 startPos;
+			VECTOR2 startV; //‰‘¬
 			float radius;
 			float friction; //–€CŒW”
 			float limmitV;  //‘¬“x‚ÌÕ“Ë•ûŒü¬•ª‚ÌãŒÀ’l
@@ -55,5 +56,6 @@ namespace GAME09
 		
 		void setActive(bool active) { Active = active; }
 		bool active() { return Active; }
+		VECTOR2 getPos() { return Pos; }
     };
 }

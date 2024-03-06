@@ -5,6 +5,7 @@
 #include "GAME09.h"
 #include "AROUNDJAPAN.h"
 #include "PHYSICS_ENGINE_AJ.h"
+#include "GAUGE.h"
 
 namespace GAME09
 {
@@ -17,19 +18,34 @@ namespace GAME09
 	}
 	void AROUNDJAPAN::init() {
 		Physics->init();
+		Gauge->init();
 	}
 	void AROUNDJAPAN::create() {
 		AroundJapan = game()->container()->data().aroundJapan;
 		Physics = new PHYSICS_ENGINE_AJ(game());
+		Gauge = new GAUGE(game());
 		Physics->create();
+		Gauge->create();
 	}
 	void AROUNDJAPAN::update() {
+		Gauge->update();
+		Physics->addForceToCoin(Gauge->getPower());
 		Physics->update();
 	}
 	void AROUNDJAPAN::draw() {
 		rectMode(CENTER);
 		image(AroundJapan.fieldImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
 		Physics->draw();
+		image(AroundJapan.fieldFrameImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
+		Gauge->draw();
+
+
+		fill(128);
+		print("a");
+		print("a");
+		print("a");
+		print(mouseX);
+		print(mouseY);
 	}
 	void AROUNDJAPAN::nextScene() {
 		if (isTrigger(MOUSE_LBUTTON)) {

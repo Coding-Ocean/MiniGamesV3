@@ -18,6 +18,7 @@ namespace GAME09
     private:
         DATA AroundJapan;
         class PHYSICS_ENGINE_AJ* Physics;
+        class GAUGE* Gauge;
     public:
         AROUNDJAPAN(class GAME* game);
         ~AROUNDJAPAN();

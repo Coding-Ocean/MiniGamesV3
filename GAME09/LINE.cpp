@@ -13,13 +13,13 @@ namespace GAME09
 
 		Sw = 2;
 	}
-	void LINE::draw() {
-		strokeWeight(Sw);
-		stroke(0);
-		line(SP.x, SP.y, EP.x, EP.y);
-	}
 	LINE::~LINE() {
 
+	}
+	void LINE::draw() {
+		strokeWeight(Sw);
+		stroke(255,0,0);
+		line(SP.x, SP.y, EP.x, EP.y);
 	}
 	VECTOR2 LINE::closest(VECTOR2 p) {
 		VECTOR2 v1 = p - SP;

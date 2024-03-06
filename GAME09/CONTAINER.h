@@ -8,6 +8,8 @@
 #include "BACKBUTTON.h"
 #include "BACKGROUND.h"
 #include "COIN.h"
+#include "PHYSICS_ENGINE_AJ.h"
+#include "GAUGE.h"
 
 namespace GAME09
 {
@@ -23,6 +25,8 @@ namespace GAME09
 			BACKBUTTON::DATA back;
 			BACKGROUND::DATA backG;
 			COIN::DATA coin;
+			PHYSICS_ENGINE_AJ::DATA phisicsAj;
+			GAUGE::DATA gauge;
 		};
 		DATA Data;
 	public:
