@@ -72,8 +72,6 @@ namespace GAME09 {
 		colorMode(RGB);
 		image(Gauge.frameImg, Gauge.framePos.x, Gauge.framePos.y, 0, Gauge.frameSize);
 		image(Gauge.buttonImg, Gauge.buttonPos.x, Gauge.buttonPos.y, 0, Gauge.buttonSize);
-		//circle(Gauge.buttonPos.x, Gauge.buttonPos.y, Gauge.buttonRadius);
-		print(Power);
 	}
 	bool GAUGE::Collision() {
 		VECTOR2 mousePos(mouseX, mouseY);

@@ -26,6 +26,7 @@ namespace GAME09
 		Omega = 0;
 		M = 1;
 		I = 0.5f * M * R * R;
+		Active = true;
 	}
 	void COIN::update() {
 		//if (isTrigger(MOUSE_LBUTTON)) {
@@ -33,15 +34,20 @@ namespace GAME09
 		//}
 		Pos += V * delta;
 		Theta += Omega * delta;
+		if (Pos.y > height) {
+			init();
+		}
 	}
 	void COIN::draw() {
-		angleMode(RADIANS);
-		rectMode(CENTER);
-		strokeWeight(Coin.sw);
-		stroke(0);
-		fill(0, 0, 0, 0);
-		circle(Pos.x, Pos.y, R * 2);
-		image(Coin.img, Pos.x, Pos.y, Theta, Coin.imgSize);
+		if (Active) {
+			angleMode(RADIANS);
+			rectMode(CENTER);
+			strokeWeight(Coin.sw);
+			stroke(0);
+			fill(0, 0, 0, 0);
+			circle(Pos.x, Pos.y, R * 2);
+			image(Coin.img, Pos.x, Pos.y, Theta, Coin.imgSize);
+		}
 	}
 	void COIN::addImpulseLocal(const VECTOR2& impulse, const VECTOR2& addLocalPos) {
 		V += impulse / M;
@@ -67,5 +73,21 @@ namespace GAME09
 			addImpulseLocal((nv + fDir * Coin.friction) *
 				Min(dotV, Coin.limmitV) * M, -nv * R);//ñÄéCÅ{êÇíºå¯óÕ
 		}
+	}
+	int COIN::collisionHoles(std::vector<HOLE>& holes, HOLE* winHole) {
+		VECTOR2 distance;
+		for (HOLE& hole : holes) {
+			distance = Pos - hole.getPos();
+			if (distance.mag() < R) {
+				init();
+				return -1;
+			}
+		}
+		distance = Pos - winHole->getPos();
+		if (distance.mag() < R) {
+			init();
+			return 1;
+		}
+		return 0;
 	}
 }

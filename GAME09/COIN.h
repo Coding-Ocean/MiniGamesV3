@@ -1,6 +1,7 @@
 #pragma once
 #include "GAME_OBJECT.h"
 #include "LINE.h"
+#include "HOLE.h"
 #include "../../libOne/inc/VECTOR2.h"
 #include <vector>
 
@@ -53,6 +54,7 @@ namespace GAME09
 		void addImpulse(const VECTOR2& impulse, const VECTOR2& addPos);
 		void applyForce(const VECTOR2& force);
 		void collisionWalls(std::vector<LINE>& walls);
+		int collisionHoles(std::vector<HOLE>& holes, HOLE* winHole);
 		
 		void setActive(bool active) { Active = active; }
 		bool active() { return Active; }

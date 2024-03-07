@@ -49,7 +49,7 @@ namespace GAME09
 			}
 		}
 		if (game()->fade()->outEndFlag()) {
-			game()->changeScene(GAME::SELECT_ID);
+			game()->changeScene(GAME::NUM_SCENES + GAME::AroundJapan);
 		}
 	}
 }

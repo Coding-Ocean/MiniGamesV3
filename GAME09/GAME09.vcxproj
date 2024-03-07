@@ -146,6 +146,7 @@
     <ClCompile Include="GAME09.cpp" />
     <ClCompile Include="GAME_OBJECT.cpp" />
     <ClCompile Include="GAUGE.cpp" />
+    <ClCompile Include="HOLE.cpp" />
     <ClCompile Include="LINE.cpp" />
     <ClCompile Include="MESSAGE.cpp" />
     <ClCompile Include="PHYSICS_ENGINE_AJ.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="GAME09.h" />
     <ClInclude Include="GAME_OBJECT.h" />
     <ClInclude Include="GAUGE.h" />
+    <ClInclude Include="HOLE.h" />
     <ClInclude Include="LINE.h" />
     <ClInclude Include="MESSAGE.h" />
     <ClInclude Include="PHYSICS_ENGINE_AJ.h" />

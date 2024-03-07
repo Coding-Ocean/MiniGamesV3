@@ -37,15 +37,14 @@ namespace GAME09
 		image(AroundJapan.fieldImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
 		Physics->draw();
 		image(AroundJapan.fieldFrameImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
+		image(AroundJapan.inletImg, AroundJapan.imgPos.x, AroundJapan.imgPos.y, 0, AroundJapan.imgSize);
 		Gauge->draw();
 
-
-		fill(128);
-		print("a");
-		print("a");
-		print("a");
-		print(mouseX);
-		print(mouseY);
+		fill(0);
+		textMode(BOTTOM);
+		textSize(AroundJapan.textSize);
+		text((let)"¬Œ÷‰ñ”F" + Physics->win(), AroundJapan.winTextPos.x, AroundJapan.winTextPos.y);
+		text((let)"Ž¸”s‰ñ”F" + Physics->lose(), AroundJapan.loseTextPos.x, AroundJapan.loseTextPos.y);
 	}
 	void AROUNDJAPAN::nextScene() {
 		if (isTrigger(MOUSE_LBUTTON)) {
@@ -54,7 +53,7 @@ namespace GAME09
 			}
 		}
 		if (game()->fade()->outEndFlag()) {
-			game()->changeScene(GAME::SELECT_ID);
+			game()->changeScene(GAME::TITLE_ID);
 		}
 	}
 }

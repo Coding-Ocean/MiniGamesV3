@@ -38,8 +38,15 @@ namespace GAME09
 	}
 	void SELECT::draw() {
 		rectMode(CORNER);
-		textSize(100);
-		text("ÉQÅ[ÉÄëIë", 10, 110);
+		textMode(BOTTOM);
+		textSize(Select.textSize);
+		fill(Select.textStroke);
+		text(Select.selectText.c_str(), Select.textPos.x + Select.textStrokeWeight, Select.textPos.y + Select.textStrokeWeight);
+		text(Select.selectText.c_str(), Select.textPos.x - Select.textStrokeWeight, Select.textPos.y + Select.textStrokeWeight);
+		text(Select.selectText.c_str(), Select.textPos.x + Select.textStrokeWeight, Select.textPos.y - Select.textStrokeWeight);
+		text(Select.selectText.c_str(), Select.textPos.x - Select.textStrokeWeight, Select.textPos.y - Select.textStrokeWeight);
+		fill(Select.textColor);
+		text(Select.selectText.c_str(), Select.textPos.x, Select.textPos.y);
 		stroke(0);
 		strokeWeight(2);
 		for (int y = 0; y < Select.row; y++) {

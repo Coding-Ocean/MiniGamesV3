@@ -20,6 +20,7 @@
     <ClCompile Include="LINE.cpp" />
     <ClCompile Include="PHYSICS_ENGINE_AJ.cpp" />
     <ClCompile Include="GAUGE.cpp" />
+    <ClCompile Include="HOLE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
@@ -38,5 +39,6 @@
     <ClInclude Include="LINE.h" />
     <ClInclude Include="PHYSICS_ENGINE_AJ.h" />
     <ClInclude Include="GAUGE.h" />
+    <ClInclude Include="HOLE.h" />
   </ItemGroup>
 </Project>

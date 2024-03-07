@@ -12,8 +12,12 @@ namespace GAME09
         struct DATA {
             int fieldImg;
             int fieldFrameImg;
+            int inletImg;
             float imgSize;
             VECTOR2 imgPos;
+            VECTOR2 winTextPos;
+            VECTOR2 loseTextPos;
+            float textSize;
         };
     private:
         DATA AroundJapan;

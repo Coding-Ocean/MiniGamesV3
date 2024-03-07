@@ -12,11 +12,11 @@ namespace GAME09
 		Data.title.textColor = COLOR(255, 255, 255);
 		Data.title.textStrokeColor = COLOR(0, 0, 0);
 		Data.title.textStrokeRate = 0.01f;
-		Data.title.titleSize = 150;
+		Data.title.titleSize = 200;
 		Data.title.startSize = 100;
-		Data.title.titlePos = VECTOR2(60, 500);
+		Data.title.titlePos = VECTOR2(360, 500);
 		Data.title.startPos = VECTOR2(610,800);
-		strcpy_s(Data.title.titleStr, "レトロゲームコレクション");
+		strcpy_s(Data.title.titleStr, "新幹線ゲーム");
 		strcpy_s(Data.title.startStr, "click to start");
 
 		Data.select.col = 3;
@@ -24,6 +24,12 @@ namespace GAME09
 		Data.select.imgSize = VECTOR2(400, 300);
 		Data.select.imgOfst = VECTOR2(80, 50);
 		Data.select.selectOfst = VECTOR2(120,160);//560,460
+		Data.select.selectText = "ゲーム選択";
+		Data.select.textPos = VECTOR2(710,110);
+		Data.select.textSize = 100;
+		Data.select.textColor = COLOR(255,255,255);
+		Data.select.textStrokeWeight = 1.5f;
+		Data.select.textStroke = COLOR(0, 0, 0);
 
 		Data.fade.alpha = 0;
 		Data.fade.color = COLOR(0,0,0);
@@ -38,6 +44,9 @@ namespace GAME09
 
 		Data.aroundJapan.imgPos = VECTOR2(width / 2, height / 2);
 		Data.aroundJapan.imgSize = 0.675f;
+		Data.aroundJapan.winTextPos = VECTOR2(600, 60);
+		Data.aroundJapan.loseTextPos = VECTOR2(600, 110);
+		Data.aroundJapan.textSize = 50;
 
 		Data.bingo.img = 0;
 
@@ -59,10 +68,12 @@ namespace GAME09
 
 		Data.phisicsAj.gravity = VECTOR2(0, 1000);
 		Data.phisicsAj.wallDataFileName = "..\\main\\assets\\game09\\wall_data.txt";
+		Data.phisicsAj.holeDataFileName = "..\\main\\assets\\game09\\hole_data.txt";
 		Data.phisicsAj.distanceWall = 315;
 		Data.phisicsAj.coinSize = Data.coin.radius;
 		Data.phisicsAj.tolerance = 3;
 		Data.phisicsAj.powerDiameter = 17.0f;
+		Data.phisicsAj.winHolePos = VECTOR2(779, 955);
 
 		Data.gauge.buttonPos = VECTOR2(1400, 1000);
 		Data.gauge.framePos = VECTOR2(1400, 560);
@@ -79,6 +90,7 @@ namespace GAME09
 	void CONTAINER::loadGraphic() {
 		Data.aroundJapan.fieldImg = loadImage("..\\main\\assets\\game09\\travel_field.png");
 		Data.aroundJapan.fieldFrameImg = loadImage("..\\main\\assets\\game09\\travel_field_frame.png");
+		Data.aroundJapan.inletImg = loadImage("..\\main\\assets\\game09\\inlet.png");
 		Data.back.img = loadImage("..\\main\\assets\\game09\\back_button.png");
 		Data.backG.img = loadImage("..\\main\\assets\\game09\\back_ground.png");
 		Data.coin.img = loadImage("..\\main\\assets\\game09\\coin.png");
