@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GAME00.cpp" />
+    <ClCompile Include="gmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\MAIN\assets\game00\title.txt" />
