@@ -1,3 +1,4 @@
+#include "GAME15.h"
 #include "../../libOne/inc/graphic.h"
 #include "../../libOne/inc/sound.h"
 #include "../../libOne/inc/window.h"
@@ -59,6 +60,8 @@ namespace GAME15
 
 		ClearFlag = false;
 	}
+
+	
 
 	void GAME::Play()
 	{
