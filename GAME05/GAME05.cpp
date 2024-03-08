@@ -14,6 +14,9 @@ namespace GAME05
 		Py = height / 2;
 		Radius = 200;
 
+		OniImg = loadImage("..\\main\\assets\\game05\\oni.png");
+		PoliceImg = loadImage("..\\main\\assets\\game05\\police.png");
+
 		return 0;
 	}
 
