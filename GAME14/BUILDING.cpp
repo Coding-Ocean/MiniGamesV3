@@ -103,8 +103,7 @@ namespace GAME14 {
         fill(Building.color);
             
             rect(Buildings[i].pos.x, Buildings[i].pos.y, Buildings[i].scale.x, Buildings[i].scale.y);
-            fill(125,0,0,125);
-            circle(Buildings[i].pos.x, Buildings[i].pos.y, 6);
+
         }
 
         

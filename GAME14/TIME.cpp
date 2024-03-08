@@ -15,10 +15,15 @@ namespace GAME14 {
         Time = game()->container()->data().time;
     }
     void TIME::init(){
+        Time = game()->container()->data().time;
         Flag = false;
     }
     void TIME::update(){
         Time.limitTime -= Time.reduceTime * delta;
+        if (Time.limitTime <= 0) {
+            Time.limitTime = 0;
+            Flag = true;
+        }
     }
     void TIME::draw(){
         std::string str = std::to_string((int)Time.limitTime);

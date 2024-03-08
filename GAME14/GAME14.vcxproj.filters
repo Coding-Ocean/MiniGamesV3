@@ -35,6 +35,27 @@
       <Filter>container</Filter>
     </ClCompile>
     <ClCompile Include="TIME.cpp" />
+    <ClCompile Include="BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="CREDIT_BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="EXIT_BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="RETRY_BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="START_BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="TITLE_BUTTON.cpp">
+      <Filter>button</Filter>
+    </ClCompile>
+    <ClCompile Include="CREDIT.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME14.h">
@@ -68,6 +89,27 @@
       <Filter>container</Filter>
     </ClInclude>
     <ClInclude Include="TIME.h" />
+    <ClInclude Include="BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="CREDIT_BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="EXIT_BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="RETRY_BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="START_BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="TITLE_BUTTON.h">
+      <Filter>button</Filter>
+    </ClInclude>
+    <ClInclude Include="CREDIT.h">
+      <Filter>scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="base">
@@ -84,6 +126,9 @@
     </Filter>
     <Filter Include="container">
       <UniqueIdentifier>{ecd3ead5-42ce-4717-9f94-fabbdf597d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="button">
+      <UniqueIdentifier>{d90d944f-59a9-4a0c-92b8-bdc45f278dbf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

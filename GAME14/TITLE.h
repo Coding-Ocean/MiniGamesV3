@@ -13,16 +13,32 @@ namespace GAME14 {
             COLOR textColor = COLOR(0);
             VECTOR2 pos = VECTOR2(0, 0);
             int textSize = 0;
+            COLOR backColor;
+            COLOR rectColor;
+            VECTOR2 rectSize;
+            float animeTime;
 
         };
     private:
         struct DATA Title;
+        class START_BUTTON* Start;
+        class EXIT_BUTTON* Exit;
+        class CREDIT_BUTTON* Credit;
+        int SerectId;
+        float AnimeTime;
+        float ColorA;
+        bool FadeStart;
+        bool FadeEnd;
+        bool SceneMove;
     public:
         TITLE(class GAME* game);
+        ~TITLE();
         void create();
+        void init();
         void update();
         void draw();
         void nextScene();
+        void fade();
     };
 }
 

@@ -5,6 +5,7 @@
 #include"BUILDING.h"
 #include"TITLE.h"
 #include"STAGE.h"
+#include"CREDIT.h"
 #include"GAME_CLEAR.h"
 #include"GAME_OVER.h"
 #include "GAME14.h"
@@ -20,6 +21,7 @@ namespace GAME14
 		Container = new CONTAINER();	
 		Scenes[TITLE_ID] = new TITLE(this);
 		Scenes[STAGE_ID] = new STAGE(this);
+		Scenes[CREDIT_ID] = new CREDIT(this);
 		Scenes[GAME_CLEAR_ID] = new GAME_CLEAR(this);
 		Scenes[GAME_OVER_ID] = new GAME_OVER(this);
 		
@@ -33,7 +35,7 @@ namespace GAME14
 		Player->create();
 		Building->create();
 		changeScene(TITLE_ID);
-
+		ExitFlag = false;
 		return 0;
 	}
 
@@ -60,15 +62,16 @@ namespace GAME14
 		Scenes[CurSceneId]->proc();
 		//テキスト情報
 		fill(0);
-		textSize(100);
-		text("Enterでメニューに戻る", 0, height);
+		//textSize(100);
+		//text("Enterでメニューに戻る", 0, height);
 		//メニューに戻る------------------------------------------
-		if (isTrigger(KEY_ENTER)) {
+		if (ExitFlag||isTrigger(KEY_ENTER)) {
 			main()->backToMenu();
 		}
 	}
 	void GAME::changeScene(SCENE_ID sceneId) {
 		CurSceneId = sceneId;
+		Scenes[CurSceneId]->init();
 	}
 
 }

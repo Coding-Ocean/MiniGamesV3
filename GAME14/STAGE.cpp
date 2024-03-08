@@ -4,6 +4,7 @@
 #include"../../libOne/inc/graphic.h"
 #include"../../libOne/inc/input.h"
 #include"../../libOne/inc/window.h"
+#include"../../libOne/inc/mathUtil.h"
 #include "STAGE.h"
 namespace GAME14 {
 	STAGE::STAGE(class GAME* game):
@@ -17,21 +18,29 @@ namespace GAME14 {
 		Time = new TIME(game());
 		Time->create();
 	}
+	void STAGE::init() {
+		game()->building()->init();
+		game()->player()->init();
+		Time->init();
+		Flag = false;
+		FadeStart = true;
+		FadeEnd = false;
+		ColorA = Stage.rectColor.a;
+		AnimeTime = 0;
+	}
 	void STAGE::update(){
 		if (isTrigger(KEY_Z)) {
-			game()->building()->init();
-			game()->player()->init();
-			Time->init();
+			init();
 		}
-
-		if (Stage.cnt >=1&&isTrigger(KEY_SPACE)) Stage.flag = true;
-		if (Stage.flag) {
 			game()->building()->update();
 			game()->player()->update();
-			Time->update();
-		}
-		else {
-			Stage.cnt += delta;
+		if (FadeEnd) {
+			if (Flag) {
+				Time->update();
+			}
+			else {
+				if (!game()->player()->getStay() && isTrigger(KEY_SPACE)) Flag = true;
+			}
 		}
 	}
 	void STAGE::draw(){
@@ -39,9 +48,30 @@ namespace GAME14 {
 		game()->player()->draw();
 		game()->building()->draw();
 		Time->draw();
-		if(!Stage.flag)
-		text("SPACEでスタート", width / 2, height / 2);
+		if (FadeStart)fade();
+		//print(Stage.animeTime);
 	}
-	void STAGE::nextScene(){}
+	void STAGE::nextScene(){
+		if (Time->timeUp()||isTrigger(KEY_S)) {
+			game()->changeScene(game()->GAME_CLEAR_ID);
+		}
+		if (!game()->player()->checkAlive()||isTrigger(KEY_D)) {
+			game()->changeScene(game()->GAME_OVER_ID);
+		}
+	}
+	void STAGE::fade() {
+		AnimeTime += delta;
+		if (AnimeTime <= Stage.animeTime) {
+			float theta = AnimeTime / Stage.animeTime * 90.0f;
+			float ratio = Cos(theta);
+			Stage.rectColor.a = ColorA * ratio;
+		}
+		else {
+			FadeStart = false;
+			FadeEnd = true;
+		}
+		fill(Stage.rectColor);
+		rect(0, 0, Stage.rectSize.x, Stage.rectSize.y);
+	}
 
 }

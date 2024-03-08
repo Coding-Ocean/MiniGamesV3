@@ -9,18 +9,27 @@ namespace GAME14 {
     {
     public:
         struct DATA {
-            int img = 0;
-            char str[64] = {};
-            COLOR textColor = COLOR(0, 0, 0);
-            VECTOR2 pos = VECTOR2(0, 0);
-            int textSize = 0;
+            int img;
+            VECTOR2 imgPos;
+            float imgSize;
+            char str[64];
+            COLOR textColor ;
+            VECTOR2 pos ;
+            int textSize;
+            COLOR backColor;
 
         };
     private:
         struct DATA Game_Clear;
+        class RETRY_BUTTON* Retry;
+        class TITLE_BUTTON* Title;
+        class EXIT_BUTTON* Exit;
+        int SerectId;
     public:
         GAME_CLEAR(class GAME* game);
+        ~GAME_CLEAR();
         void create();
+        void init();
         void update();
         void draw();
         void nextScene();

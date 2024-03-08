@@ -16,6 +16,7 @@ namespace GAME14
         enum SCENE_ID {
             TITLE_ID,
             STAGE_ID,
+            CREDIT_ID,
             GAME_CLEAR_ID,
             GAME_OVER_ID,
             NUM_SCENES
@@ -25,6 +26,7 @@ namespace GAME14
         SCENE_ID CurSceneId;
         class PLAYER* Player;
         class  BUILDING* Building;
+        bool ExitFlag;
     public:
         GAME(class MAIN* main) :GAME_BASE(main) {};
         ~GAME() {};
@@ -35,5 +37,7 @@ namespace GAME14
         void changeScene(SCENE_ID sceneId);
         class PLAYER* player() { return Player; }
         class BUILDING* building() {return Building; }
+        class STAGE* stage() { return (class STAGE*)Scenes[STAGE_ID]; }
+        void setExitFlag(bool flag) { ExitFlag = flag; }
     };
 }

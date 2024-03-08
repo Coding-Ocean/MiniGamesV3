@@ -8,21 +8,33 @@ namespace GAME14 {
     {
     public:
         struct DATA {
-            int img = 0;
-            COLOR backColor = 0;
-            bool flag = false;
+            int img ;
+            COLOR backColor ;
             float cnt = 0;
+            float animeTime;
+            COLOR rectColor;
+            VECTOR2 rectSize;
+
         };
     private:
         struct DATA Stage;
         class TIME* Time;
+        float AnimeTime;
+        float ColorA;
+        bool Flag = false;
+        bool FadeStart;
+        bool FadeEnd;
     public:
         STAGE(class GAME* game);
         ~STAGE();
+        void init();
         void create();
         void update();
         void draw();
         void nextScene();
+        void fade();
+        void setFlag(bool flag) { Flag = flag; }
+        class TIME* time() { return Time; }
 
     };
 }
