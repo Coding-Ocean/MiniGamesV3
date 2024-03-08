@@ -221,10 +221,10 @@ namespace GAME05
 	}
 	void GAME::destroy()
 	{
-		delete new DATA;
-		delete new CHARA;
-		delete new BULLET;
-		delete new ITEM;
+		delete i;// ITEM;
+		delete c;// CHARA;
+		delete b;// BULLET;
+		delete d;//DATA;
 		//create()Ç≈newÇµÇΩèÍçáÇÕÇ±Ç±Ç≈deleteÇ∑ÇÈÇ±Ç∆
 	}
 
