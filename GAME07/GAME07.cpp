@@ -195,6 +195,11 @@ namespace GAME07
 			TRate = 0.3;
 			j++;
 		}
+		//ƒƒjƒ…[‚É–ß‚é------------------------------------------
+		if (isTrigger(KEY_ENTER)) {
+			main()->backToMenu();
+		}
+
 	}
 
 	void GAME::Clear() {
