@@ -136,10 +136,44 @@
     <Text Include="..\MAIN\assets\game14\title.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BUILDING.cpp" />
+    <ClCompile Include="BUTTON.cpp" />
+    <ClCompile Include="CONTAINER.cpp" />
+    <ClCompile Include="CREDIT.cpp" />
+    <ClCompile Include="CREDIT_BUTTON.cpp" />
+    <ClCompile Include="EXIT_BUTTON.cpp" />
     <ClCompile Include="GAME14.cpp" />
+    <ClCompile Include="GAME_CLEAR.cpp" />
+    <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="GAME_OVER.cpp" />
+    <ClCompile Include="PLAYER.cpp" />
+    <ClCompile Include="RETRY_BUTTON.cpp" />
+    <ClCompile Include="SCENE.cpp" />
+    <ClCompile Include="STAGE.cpp" />
+    <ClCompile Include="START_BUTTON.cpp" />
+    <ClCompile Include="TIME.cpp" />
+    <ClCompile Include="TITLE.cpp" />
+    <ClCompile Include="TITLE_BUTTON.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BUILDING.h" />
+    <ClInclude Include="BUTTON.h" />
+    <ClInclude Include="CONTAINER.h" />
+    <ClInclude Include="CREDIT.h" />
+    <ClInclude Include="CREDIT_BUTTON.h" />
+    <ClInclude Include="EXIT_BUTTON.h" />
     <ClInclude Include="GAME14.h" />
+    <ClInclude Include="GAME_CLEAR.h" />
+    <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="GAME_OVER.h" />
+    <ClInclude Include="PLAYER.h" />
+    <ClInclude Include="RETRY_BUTTON.h" />
+    <ClInclude Include="SCENE.h" />
+    <ClInclude Include="STAGE.h" />
+    <ClInclude Include="START_BUTTON.h" />
+    <ClInclude Include="TIME.h" />
+    <ClInclude Include="TITLE.h" />
+    <ClInclude Include="TITLE_BUTTON.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
