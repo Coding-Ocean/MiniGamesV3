@@ -14,7 +14,8 @@ namespace GAME09
 
 	}
 	AROUNDJAPAN::~AROUNDJAPAN() {
-
+		delete Gauge;
+		delete Physics;
 	}
 	void AROUNDJAPAN::init() {
 		Physics->init();
