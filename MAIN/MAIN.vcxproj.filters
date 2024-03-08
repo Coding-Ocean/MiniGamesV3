@@ -14,9 +14,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MAIN.cpp" />
-    <ClCompile Include="TRANSITION_EFFECT.cpp" />
     <ClCompile Include="GAME_FACTORY.cpp" />
     <ClCompile Include="GAME_BASE.cpp" />
+    <ClCompile Include="TRANSITION_EFFECT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">
