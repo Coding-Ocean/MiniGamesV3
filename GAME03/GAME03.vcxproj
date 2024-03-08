@@ -133,13 +133,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FADE.h" />
     <ClInclude Include="GAME03.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FADE.cpp" />
     <ClCompile Include="GAME03.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\MAIN\assets\game03\title.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -50,7 +50,7 @@ bool TRANSITION_EFFECT::outEndFlag()
 void TRANSITION_EFFECT::proc()
 {
 	//フェードイン又はアウトが終了しているときは何もしない
-	if (State == IN_END || 
+	if (State == IN_END ||
 		State == OUT_END) {
 		return;
 	}
@@ -70,7 +70,7 @@ void TRANSITION_EFFECT::proc()
 		return;
 	}
 	//フェードアウト
-	if(State == OUT_START){
+	if (State == OUT_START) {
 		rect(0, 0, width, height);
 		Alpha += Speed * delta;
 		if (Alpha >= 255) {
