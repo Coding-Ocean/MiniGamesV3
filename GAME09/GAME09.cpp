@@ -1,47 +1,98 @@
 #include "../../libOne/inc/libOne.h"
 #include "../MAIN/MAIN.h"
 #include "GAME09.h"
+#include "CONTAINER.h"
+#include "TITLE.h"
+#include "SELECT.h"
+#include "FADE.h"
+#include "MESSAGE.h"
+#include "AROUNDJAPAN.h"
+#include "BINGO.h"
+#include "BACKBUTTON.h"
+#include "BACKGROUND.h"
+
 namespace GAME09
 {
 
 	int GAME::create()
 	{
-		//ここでは主に画像と音データを読み込む
+		//new
+		Container = new CONTAINER;
+		Scenes[TITLE_ID] = new TITLE(this);
+		Scenes[SELECT_ID] = new SELECT(this);
+		Scenes[NUM_SCENES + AroundJapan] = new AROUNDJAPAN(this);
+		Scenes[NUM_SCENES + Bingo] = new BINGO(this);
+		Scenes[NUM_SCENES + Enpty1] = nullptr;
+		Scenes[NUM_SCENES + Enpty2] = nullptr;
+		Scenes[NUM_SCENES + Enpty3] = nullptr;
+		Scenes[NUM_SCENES + Enpty4] = nullptr;
+		Fade = new FADE(this);
+		Message = new MESSAGE(this);
+		Back = new BACKBUTTON(this);
+		BackG = new BACKGROUND(this);
 
-		//初期値設定はInit()関数などを作ってそこで行ったほうが良い。
-		//シンプルなゲームなら次のように、ここで行ってもよい。
-		Px = width / 2;
-		Py = height / 2;
-		Radius = 200;
+		//load
+		Container->load();
+
+		//create
+		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
+			if (Scenes[i] != nullptr) {
+				Scenes[i]->create();
+			}
+		}
+		Fade->create();
+		Message->create();
+		Back->create();
+		BackG->create();
+
+		//init
+		CurSceneId = TITLE_ID;
 
 		return 0;
 	}
 
 	void GAME::destroy()
 	{
-		//create()でnewした場合はここでdeleteすること
+		delete BackG;
+		delete Back;
+		delete Message;
+		delete Fade;
+		for (int i = 0; i < NUM_SCENES + NUM_GAMES; i++) {
+			if (Scenes[i] != nullptr) {
+				delete Scenes[i];
+			}
+		}
+		delete Container;
 	}
 
 	void GAME::proc()
 	{
-		//ここはメインループから呼び出されている!!!!!
-
-		//描画--------------------------------------------------
-		clear(255, 255, 255);
-		//円
-		strokeWeight(50);
-		stroke(0);
-		fill(255, 0, 0);
-		circle(Px, Py, Radius * 2);
-		//テキスト情報
-		fill(0);
-		textSize(100);
-		text("Enterでメニューに戻る", 0, height);
-		print(9);
-		//メニューに戻る------------------------------------------
-		if (isTrigger(KEY_ENTER)) {
-			main()->backToMenu();
-		}
+		clear();
+		BackG->proc();
+		Scenes[CurSceneId]->proc();
+		Message->proc();
+		Back->proc();
+		Fade->proc();
 	}
 
+	void GAME::changeScene(int sceneId) {
+		CurSceneId = sceneId;
+		Scenes[CurSceneId]->init();
+		Fade->inStart();
+		Message->resetMessage();
+	}
+
+	void GAME::backToMenu() {
+		main()->backToMenu();
+	}
+
+	void GAME::launchGame(GAME_ID gameId) {
+		int sceneId = NUM_SCENES + gameId;
+		if (Scenes[sceneId] == nullptr) {
+			Message->upperMessage("ゲームがありません");
+		}
+		else {
+			Fade->outStart();
+		}
+	}
 }

@@ -5,8 +5,40 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GAME09.cpp" />
+    <ClCompile Include="GAME_OBJECT.cpp" />
+    <ClCompile Include="SCENE.cpp" />
+    <ClCompile Include="TITLE.cpp" />
+    <ClCompile Include="CONTAINER.cpp" />
+    <ClCompile Include="SELECT.cpp" />
+    <ClCompile Include="FADE.cpp" />
+    <ClCompile Include="MESSAGE.cpp" />
+    <ClCompile Include="AROUNDJAPAN.cpp" />
+    <ClCompile Include="BINGO.cpp" />
+    <ClCompile Include="BACKBUTTON.cpp" />
+    <ClCompile Include="BACKGROUND.cpp" />
+    <ClCompile Include="COIN.cpp" />
+    <ClCompile Include="LINE.cpp" />
+    <ClCompile Include="PHYSICS_ENGINE_AJ.cpp" />
+    <ClCompile Include="GAUGE.cpp" />
+    <ClCompile Include="HOLE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GAME09.h" />
+    <ClInclude Include="GAME_OBJECT.h" />
+    <ClInclude Include="SCENE.h" />
+    <ClInclude Include="TITLE.h" />
+    <ClInclude Include="CONTAINER.h" />
+    <ClInclude Include="SELECT.h" />
+    <ClInclude Include="FADE.h" />
+    <ClInclude Include="MESSAGE.h" />
+    <ClInclude Include="AROUNDJAPAN.h" />
+    <ClInclude Include="BINGO.h" />
+    <ClInclude Include="BACKBUTTON.h" />
+    <ClInclude Include="BACKGROUND.h" />
+    <ClInclude Include="COIN.h" />
+    <ClInclude Include="LINE.h" />
+    <ClInclude Include="PHYSICS_ENGINE_AJ.h" />
+    <ClInclude Include="GAUGE.h" />
+    <ClInclude Include="HOLE.h" />
   </ItemGroup>
 </Project>
