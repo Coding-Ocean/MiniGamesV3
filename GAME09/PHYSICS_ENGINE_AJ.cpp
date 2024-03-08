@@ -45,7 +45,7 @@ namespace GAME09
 	}
 	void PHYSICS_ENGINE_AJ::draw() {
 		Coin->draw();
-		//for (auto it = Holes.begin(); it != Holes.end(); it++) {
+		//for (auto it = Walls.begin(); it != Walls.end(); it++) {
 		//	(*it).draw();
 		//}
 	}
