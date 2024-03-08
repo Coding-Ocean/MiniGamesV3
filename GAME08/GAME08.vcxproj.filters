@@ -5,6 +5,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GAME08.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\MAIN\assets\game08\title.txt" />
