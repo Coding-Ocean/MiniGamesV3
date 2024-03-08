@@ -69,7 +69,7 @@ namespace GAME00
 		py = 540;
 		pw = 150;
 		ph = 200;
-		vx = 50;
+		vx = 45;
 
 		cx = 650;
 		cy = 400;
