@@ -133,13 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GAME05.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="GAME05.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\MAIN\assets\game05\title.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GAME05.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
