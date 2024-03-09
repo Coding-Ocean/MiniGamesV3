@@ -23,10 +23,10 @@ namespace GAME13
 
     void GAME::proc()
     {
-        if (State == TITLE)Title();
-        else if (State == PLAY)Play();
-        else if (State == CLEAR)Clear();
         // ここはメインループから呼び出されている
+        if (State == TITLE)Title();
+        else if (State == OPERATION)Operation();
+        else if (State == PLAY)Play();
     }
 
     void GAME::Title()
@@ -39,12 +39,11 @@ namespace GAME13
         textSize(100);
         print("じゃんけん");
         print("クリックでゲームスタート");
-       
+        print("Enterでメニューに戻る");
 
         // シーン切り替え
         if (isTrigger(MOUSE_LBUTTON)) {
-            Init();
-            State = PLAY;
+            State = OPERATION;
             return;
         }
 
@@ -54,12 +53,7 @@ namespace GAME13
         }
     }
 
-    void GAME::Init()
-    {
-        // 初期化処理（今回は特に何もしない）
-    }
-
-    void GAME::Play()
+    void GAME::Operation()
     {
         // 画面描画
         clear(255, 255, 255);
@@ -69,30 +63,36 @@ namespace GAME13
         print("Aでグー");
         print("Sでチョキ");
         print("Dでパー");
-        print("タイトルに戻る");
+        print("");
 
+        State = PLAY;
+    }
+
+    void GAME::Play()
+    {
         // プレイヤーの入力を受け取る
+        playerHand = NONE;
         if (isTrigger(KEY_A)) {
             playerHand = ROCK;
-            determineWinner();
         }
         else if (isTrigger(KEY_S)) {
             playerHand = SCISSORS;
-            determineWinner();
         }
         else if (isTrigger(KEY_D)) {
             playerHand = PAPER;
+        }
+
+        //プレイヤーの入力があったら以下の処理へ
+        if (playerHand != NONE) {
+            Operation();
             determineWinner();
         }
 
-        // シーン切り替え（例：クリアフラグが立った場合）
-        if (ClearFlag) {
-            State = CLEAR;
+        // メニューに戻る
+        if (isTrigger(KEY_ENTER)) {
+            main()->backToMenu();
         }
     }
-
-        
-
 
     void GAME::determineWinner()
     {
@@ -100,23 +100,24 @@ namespace GAME13
         computerHand = static_cast<Hand>(rand() % 3);
 
         // プレイヤーの手とコンピュータの手を表示
-        print("あなたの手: ");
+        print("あなたの手");
         if (playerHand == ROCK)
-            print("グー");
+            print("　グー");
         else if (playerHand == PAPER)
-            print("パー");
+            print("　パー");
         else
-            print("チョキ");
+            print("　チョキ");
 
-        print("コンピュータの手: ");
+        print("コンピュータの手");
         if (computerHand == ROCK)
-            print("グー");
+            print("　グー");
         else if (computerHand == PAPER)
-            print("パー");
+            print("　パー");
         else
-            print("チョキ");
+            print("　チョキ");
 
         // 勝敗判定と結果表示
+        print("");
         if (playerHand == computerHand) {
             // 引き分け
             print("引き分け！");
@@ -130,23 +131,10 @@ namespace GAME13
         else {
             // プレイヤーの負け
             print("あなたの負け！");
-            State = CLEAR; // 負けた場合、Clear() 関数に遷移する
         }
-    }
 
-    void GAME::Clear()
-    {
-        // 画面描画
-        clear(0, 0, 255);
-
-        // テキスト情報
-        fill(255, 255, 255);
-        print("クリックでタイトルに戻る");
-
-        // シーン切り替え（マウスクリックがあった場合）
-        if (isTrigger(MOUSE_LBUTTON)) {
-            State = TITLE;
-        }
+        print("");
+        print("Enterでメニューに戻る");
     }
 
 }; // namespace GAME13

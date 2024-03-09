@@ -15,15 +15,13 @@ namespace GAME13
         void destroy();
 
     private:
-        enum STATE { TITLE, PLAY, CLEAR, OVER };
+        enum STATE { TITLE, OPERATION, PLAY };
         STATE State = TITLE;
         void Title();
-        void Init();
+        void Operation();
         void Play();
-        void Clear();
-        bool ClearFlag = false;
 
-        enum Hand { ROCK, PAPER, SCISSORS };
+        enum Hand { NONE, ROCK, PAPER, SCISSORS };
         Hand playerHand;
         Hand computerHand;
 
