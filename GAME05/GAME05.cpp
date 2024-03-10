@@ -309,7 +309,7 @@ namespace GAME05
 		print("・Aキー:左移動");
 		print("・Dキー:右移動");
 		print("・Spaceキー:弾発射");
-		print("・Bキーでタイトルに戻る");
+		print("・Tキーでタイトルに戻る");
 		print("・PUSH E");
 		if (isTrigger(KEY_E)) {
 			playSound(ClickSnd);
@@ -330,7 +330,7 @@ namespace GAME05
 		print("・Aキー:左移動");
 		print("・Dキー:右移動");
 		print("・Spaceキー:弾発射");
-		print("・Bキーでタイトルに戻る");
+		print("・Tキーでタイトルに戻る");
 		print("・PUSH H");
 		if (isTrigger(KEY_H)) {
 			playSound(ClickSnd);
